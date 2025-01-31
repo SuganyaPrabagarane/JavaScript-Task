@@ -8,5 +8,5 @@ Use console.log() to print: "We have 25 fruits in total."
 let apples = 10;
 let bananas = 15;
 let totalFruits = apples + bananas;
-console.log("We have", totalFruits, "fruits in toital.");
+console.log("We have", totalFruits, "fruits in total.");
 console.log(`We have ${totalFruits} fruits in total.`);

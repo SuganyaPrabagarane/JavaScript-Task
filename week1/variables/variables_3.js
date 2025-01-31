@@ -10,3 +10,4 @@ let animalType = 'cat';
 let animalName = 'Whiskers';
 let description = 'The ' + animalType + ' is named ' + animalName + '.';
 console.log(description);
+console.log(`The ${animalType} is named ${animalName}.`);

@@ -8,5 +8,5 @@ Use console.log() to print: "The sum of 7 and 5 is 12."
 let num1 = 7;
 let num2 = 5;
 let sum = num1 + num2;
-console.log("The sum of", num1, "and", num2, "is", sum); // num1, num2 and sum displays in number data type
+console.log("The sum of", num1, "and", num2, "is", sum); // num1, num2 and sum are displayed in the number data type
 console.log(`The sum of ${num1} and ${num2} is ${sum}`); // Displays as string

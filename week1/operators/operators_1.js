@@ -24,4 +24,4 @@ console.log("The sum of a and b is:", add);
 console.log("The difference of a and b is:", sub);
 console.log("The product of a and b is:", mul);
 console.log("The division of a and b is:", divd);
-console.log(`The remainder of a and b is:"${modulo}`);
+console.log(`The remainder of a and b is:${modulo}`);
