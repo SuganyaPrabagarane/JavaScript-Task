@@ -9,8 +9,14 @@ Example outputs:
 
  */
 
-let userInput1 = "a25.75 apples";
-let extractedNumber = parseFloat(userInput1);
+let userInput = "25.75 apples";
+let extractedNumber = parseFloat(userInput);
 let roundedNumber = extractedNumber.toFixed(1);
 console.log(roundedNumber)
 console.log(extractedNumber)
+
+let userInput1 = "a25.75 apples";
+let extractedNumber1 = parseFloat(userInput1);
+let roundedNumber1 = extractedNumber1.toFixed(1);
+console.log(roundedNumber1)
+console.log(extractedNumber1)

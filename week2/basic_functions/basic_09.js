@@ -11,4 +11,8 @@ const findMax = (a,b,c) => {
     return Math.max(a,b,c);
 }
 
-console.log(findMax(12,73,20));
+console.log('Maximum Number:',findMax(12,7,20));
+
+//Find minimum number
+const findMin = (a,b,c) => Math.min(a,b,c);
+console.log('Minimum number:',findMin(12,7,20));

@@ -13,7 +13,6 @@ const findFox = (hasFox, foxName) => {
         return 'No foxes found.';
     }
 }
-
 console.log(findFox(true,'Fiona'));
 console.log(findFox(false,'Fiona'));
 console.log(findFox(true,'cat'));

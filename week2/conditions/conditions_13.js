@@ -18,7 +18,6 @@ const planAdventure = (isWeekend, isSunny, likesFoxes) => {
     }
 
 }
-
 console.log(planAdventure(true,true,true));  // Expected Result: Perfect day
 console.log(planAdventure(true,true,false)); // Expected Result: Good day
 console.log(planAdventure(true,false,true)); // Expected Result: Good day

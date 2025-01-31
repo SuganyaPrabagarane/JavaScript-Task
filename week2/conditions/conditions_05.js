@@ -10,7 +10,6 @@ Call the function with values like "fox" and "cat".
 const checkAnimal = (animaltype) => {
     return animaltype == 'fox' ? 'You have a clever companion!' : 'Not a fox, but still cool!';
 }
-
 console.log(checkAnimal('fox'));
 console.log(checkAnimal('lion'));
 console.log(checkAnimal('cat'));

@@ -13,7 +13,6 @@ const canEat = (isHungry, hasFood) => {
         return 'You need to find food!';
     }
 }
-
 console.log(canEat(true,false));
 console.log(canEat(false,true));
 console.log(canEat(false,false));

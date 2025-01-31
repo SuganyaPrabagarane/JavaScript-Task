@@ -22,7 +22,6 @@ const getAnimalDescription = (favoriteAnimal) => {
     }
 
 }
-
 console.log(getAnimalDescription('fox'));
 console.log(getAnimalDescription('dog'));
 console.log(getAnimalDescription('cat'));

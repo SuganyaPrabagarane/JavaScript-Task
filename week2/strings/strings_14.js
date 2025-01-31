@@ -12,16 +12,14 @@ Example output:
 
 let description = ' JavaScript is fun and powerful!  ';
 let removeExtraSpace = description.trim();
-console.log(removeExtraSpace);
+//console.log(removeExtraSpace);
 
-let convertLowerCase = removeExtraSpace.toLocaleLowerCase();
-console.log(convertLowerCase);
+let convertLowerCase = removeExtraSpace.toLowerCase();
+//console.log(convertLowerCase);
 
-let checkword = description.includes('fun');
+let replaceWord = convertLowerCase.replace('powerful','amazing');
+console.log(`Final descriptiopn: ${replaceWord}`);
+
+let checkword = convertLowerCase.includes('fun');
 console.log(`Does it includes 'fun'? ${checkword}`);
 
-let replaceWord = description.replace('powerful','amazing');
-console.log(replaceWord);
-
-let checkString = description.includes('fun');
-console.log(`Does it include 'fun'?${checkString}`);

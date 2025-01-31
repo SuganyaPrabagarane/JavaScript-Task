@@ -10,8 +10,21 @@ Bonus: Modify the function to use implicit return.
 const isEven = (num) =>{
     return num %2 === 0;
 }
+console.log('Is the number Even:',(isEven(4)));
 
-let num1 = isEven(3);
-console.log((num), 'is Even or Not:');
+// Calling the function with variable
+let num1 = isEven(7);
+console.log('Is even number?',num1);
 
-console.log('Is the number is Even:',(isEven(3)));
+
+//Implicit return
+const isEven1 = (num2) => num2 %2 === 0;
+console.log(isEven1(7));
+
+
+// Using ternary operator
+function isEven2(num){
+    return num %2 === 0 ? 'Even':'Odd';
+}
+
+console.log('Is Even or Odd:',isEven2(9));

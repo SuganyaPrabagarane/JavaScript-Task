@@ -26,6 +26,8 @@ console.log(getGrade1(98));
 console.log(getGrade1(70));
 
 
+//Using Switch statement
+
 const getGrade2 = (score) => {
     switch (true) {
         case score >= 90:
@@ -38,6 +40,6 @@ const getGrade2 = (score) => {
     }
 }
 
-console.log(getGrade2(88));
-console.log(getGrade2(98));
-console.log(getGrade2(70));
+console.log(getGrade2(50));
+console.log(getGrade2(90));
+console.log(getGrade2(80));

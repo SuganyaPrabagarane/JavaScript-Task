@@ -13,7 +13,6 @@ const canEnterEvent = (age, hasID) => {
         return 'You cannot enter.';
     }
 }
-
 console.log(canEnterEvent(18,true));
 console.log(canEnterEvent(16,true));
 console.log(canEnterEvent(10,false));

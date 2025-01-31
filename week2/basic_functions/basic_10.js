@@ -15,4 +15,4 @@ const cleanAndTransform = (str) => {
     return replacedWord;
 }
 
-console.log(cleanAndTransform('JavaScript is powerful'));
+console.log(cleanAndTransform('  JavaScript is powerful  '));

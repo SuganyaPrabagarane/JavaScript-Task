@@ -10,6 +10,5 @@ Call the function with different values for isRaining.
 const rainAdvice = (isRaining) => {
     return isRaining ? 'Stay indoors' : 'Enjoy the outdoors';
 }
-
 console.log(rainAdvice(true));
 console.log(rainAdvice(false));

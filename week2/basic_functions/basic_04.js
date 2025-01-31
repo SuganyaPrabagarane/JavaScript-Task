@@ -13,9 +13,12 @@ const capitalize = (str) => {
     let slicedString = str.slice(1).toLowerCase();
     return upperCase + slicedString;
     
-
-    // return str[0].toUpperCase() + str.slice(1).toLowerCase();
-
 }
-
 console.log(capitalize('javaScript'));
+
+
+
+const capitalize1 = (str) => {
+    return str[0].toUpperCase() + str.slice(1).toLowerCase();
+}
+console.log(capitalize1('jAVASCRIPT'));

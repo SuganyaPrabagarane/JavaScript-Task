@@ -29,7 +29,6 @@ const getDayName = (day) => {
     }
 }
 
-
 console.log(getDayName(1));
 console.log(getDayName(2));
 console.log(getDayName(3));

@@ -17,8 +17,11 @@ let num2 = "sugan";
 let num3 = parseFloat(num1);
 let num4 = parseFloat(num2);
 let sum = num3 + num4;
-console.log(num1);
-console.log(num2);
-console.log(num3);
-console.log(num4);
-console.log(sum);
+console.log(num1); // num1 is string
+console.log(num2); // num2 is string
+console.log(num3); // num3 is float number
+console.log(num4); // Not a number
+console.log(sum); // Not a number
+
+let sum1 = num3 + 5;
+console.log(sum1);

@@ -17,6 +17,5 @@ const checkForFox = (hasFox) => {
         return 'No fox detected!';
     }
 }
-
 console.log(checkForFox(true));
 console.log(checkForFox(false));

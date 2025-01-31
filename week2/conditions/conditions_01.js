@@ -14,11 +14,11 @@ const checkAdult = (age) => {
 
     }
 }
-
 console.log(checkAdult(20));
 
+
 const checkAdult1 = (age) => {
-    return age>=18? 'You are an adult':'Not' ;
+    return age>=18? 'You are an adult':'Not an adult' ;
 }
 
 console.log(checkAdult1(19));

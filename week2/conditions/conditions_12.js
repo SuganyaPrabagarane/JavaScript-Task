@@ -17,11 +17,11 @@ const checkFoxLover1 = (age, likesFoxes) => {
         return 'Not a fox fan, but that’s okay!';
     }
 }
-
 console.log(checkFoxLover1(20,true));
 console.log(checkFoxLover1(20,false));
 console.log(checkFoxLover1(10,true));
 console.log(checkFoxLover1(10,false));
+
 
 const checkFoxLover2 = (age, likesFoxes) => {
     if (age >= 18 && likesFoxes) {
@@ -31,7 +31,6 @@ const checkFoxLover2 = (age, likesFoxes) => {
         return 'Not a fox fan, but that’s okay!';
     }
 }
-
 console.log(checkFoxLover2(20,true));
 console.log(checkFoxLover2(20,false));
 console.log(checkFoxLover2(10,true));

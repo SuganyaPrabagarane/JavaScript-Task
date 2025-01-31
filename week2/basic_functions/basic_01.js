@@ -15,12 +15,12 @@ let sum1 = add(10,5);
 console.log('sum1:',(sum1));
 
 
-const add2 = (a,b) =>{
+const add1 = (a,b) =>{
     return a+b;
 }
-let sum2 = add2(3,5);
+let sum2 = add1(3,5);
 console.log('sum2:',(sum2));
 
-console.log('sum3:',add2(7,7));
-console.log('sum4:',add(10,20));
-console.log('sum5:',add(5,17));
+//Passing the values inside the console log
+console.log('Sum3:',add(1,2));
+console.log('Sum4:',(add1(2,4)));
