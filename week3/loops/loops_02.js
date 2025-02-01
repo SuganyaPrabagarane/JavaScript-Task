@@ -5,44 +5,42 @@ Display all numbers in a single line in the console.;
 */
 
 
-//  const logEvenNumbers = () => {
-//     for (i=2; i<=50; i+=2){
-//         console.log(i);
-//         let a = 100 - i;
-//         if (a<50){
-//             console.log(a);
-//         }
-//     }
-
-//  }
-
-//  logEvenNumbers();
-
-
-const logEvenNumbers2 = () => {
-    let i = 2;
-    while (i<100){
-        if (i%2===0){
-            
-            console.log(i,100-i);
-            i+=2;
-        }
-       
-
+ const logEvenNumbers = () => {       // Have some queries need to get clarify
+    let evenNumber = 0;
+    for (i=2; i<=50; i+=2){
+        evenNumber += ','+i;
+        let a = 100 - i;
+        if (a<100){
+            evenNumber+= ','+a;
+        }  
     }
-}
+    console.log(evenNumber);
 
-logEvenNumbers2();
+ }
+logEvenNumbers();
 
 
+ // Using while loop
+// const logEvenNumbers2 = () => {
+//     let i = 2;
+//     while (i<=50){
+//         if (i%2===0){
+//             console.log(i,100-i);
+//             i+=2;
+//         }
+
+//     }
+// }
+
+// logEvenNumbers2();
 
 
+// Using for loop
 //  const logEvenNumbers1 = () => {
 //     for (i=2; i<100; i++){
 //         if (i % 2 === 0){
-//             console.log(i);
+//             console.log(i,100-i);
 //         }
 //     }
 //  }
-
 //  logEvenNumbers1();

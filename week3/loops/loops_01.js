@@ -14,7 +14,6 @@ const logOddNumbers1 = () => {
 }
 logOddNumbers1();
 
-
 const logOddNumbers2 = () => {
     for (i=1; i<100; i+=2){
         console.log(i);

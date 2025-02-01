@@ -34,6 +34,7 @@ const calculateAverageUntilZero = () => {
 calculateAverageUntilZero();
 
 
+
 // let num1 = [2,4,6,7,3];
 // let sum = 0;
 // count=num1.length + 1;

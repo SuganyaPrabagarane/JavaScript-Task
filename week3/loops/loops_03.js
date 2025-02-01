@@ -24,5 +24,4 @@ const calculateAverageSpeed1 = () => {
     }
     
 }
-
 calculateAverageSpeed1();

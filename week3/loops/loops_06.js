@@ -8,22 +8,24 @@ Write a function named askToContinue:
 
 const askToContinue = () => {
     let count = 0;
-    let sum, average, getNumber;
-    let continueOrNot;
+    let sum = 0, average = 0, getNumber;
     let numbersArray = [];
-    while (getNumber !== 0){
+    let answer ='';
+    while (answer !== 'n'){
         getNumber = Number(window.prompt('Enter the number:'));
-        continueOrNot = window.prompt('Do you wan to continue giving numbers? (y/n)');
-        if (continueOrNot == 'n'){
-            break;
-        }
-
-        numbersArray.push(getNumber);
-        count++;
         sum = sum + getNumber;
-        average = sum / count ;
-        
+        count++;
+        numbersArray.push(getNumber);
+        average = sum / count;
 
+        answer = window.prompt('Do you wan to continue giving numbers? (y/n)');
+        
+        if (answer === 'n'){
+            break;
+        } 
+        if (answer !== 'y'){
+            prompt('Please enter a valid response (y / n)');
+        }
     }
 
     console.log(`The average of all entered number is:${average}`);
@@ -34,3 +36,25 @@ const askToContinue = () => {
 }
 
 askToContinue();
+
+
+
+const askToContinue2 = () => {
+    let count = 0;
+    let sum = 0;
+    let answer = ""
+    while (answer !== "n") {
+    let number = Number(prompt("Please enter a number)"))
+    sum += number;
+    count++
+    answer = prompt("Do you want to continue giving numbers?")
+    if (answer === "n") {
+    break;
+    }
+    if (answer !== "y") {
+    alert("Please enter a valid answer (y or n)")
+    }
+    }
+    console.log("Average of entered numbers", (sum / count))
+    }
+    askToContinue2()

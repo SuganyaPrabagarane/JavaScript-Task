@@ -11,8 +11,7 @@ const countEvenNumbers = () => {
     for (i=1; i<=20; i++){
         let number = Number(window.prompt('Enter the numbers:'));
         if (number % 2 === 0 ){
-            count++;
-            
+            count++;  
         }
         
     }
