@@ -18,7 +18,7 @@ const colorChange = () =>{
     document.body.style.backgroundColor = randomColor;
     //document.body.style.randomColor = 'blue' // --- Here mention the background color
     console.log('Button Clicked');
-    text.style.color = 'red' // --- Give the text color directly
+    text.style.color = 'red' // --- directly mention the text color 
 }
 button.addEventListener('click',colorChange);
 
