@@ -13,3 +13,9 @@ function updateText(event){
    divText.textContent = 'User entered: ' + event.target.value;
 }
 input.addEventListener('input',updateText);
+
+// Using innerText
+const updateDisplayText =() =>{
+   divText.innerText =input.value;
+}
+input.addEventListener('input',updateDisplayText);

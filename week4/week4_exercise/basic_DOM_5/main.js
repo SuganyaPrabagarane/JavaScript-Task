@@ -17,14 +17,13 @@ const colorChange = () =>{
     let randomColor = Math.floor(Math.random()*16777215).toString(16); // Need to check the concept
     document.body.style.backgroundColor = randomColor;
     //document.body.style.randomColor = 'blue' // --- Here mention the background color
-    console.log('Button Clicked');
-    text.style.color = 'red' // --- directly mention the text color 
+    console.log(randomColor); 
 }
 button.addEventListener('click',colorChange);
 
 function updateColor(event){
     divText.textContent = 'User Entered: ' + event.target.value;
-    divText.style.color = 'yellow';
+    divText.style.color = 'yellow'; // --- directly mention the text color 
     
 }
  userInput.addEventListener('input',updateColor);

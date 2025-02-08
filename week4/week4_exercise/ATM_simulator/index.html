@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>ATM Stimulator</title>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <h1>ATM Stimulator</h1>
+
+    <div class="div_atm">
+      <div class="balance">
+        <small>Balance:</small>
+        <small id="balance">0</small>
+        <small>€</small>
+        <br /><br />
+      </div>
+      <div class="pin">
+        <input id="pin" type="password" placeholder="PIN Number" />
+        <br /><br />
+        <button id="pinBtn">ENTER</button>
+      </div>
+
+      <br /><br />
+      <input id="depositBox" type="number" placeholder="Deposit amount" />
+
+      <br />
+      <br />
+      <button id="depositBtn">DEPOSIT</button>
+      <br />
+      <br />
+      <input id="withdrawBox" type="number" placeholder="Withdraw amount" />
+      <br />
+      <br />
+      <button id="withdrawBtn">WITHDRAW</button>
+      <br />
+      <br />
+      <p id="message" class="center"></p>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
