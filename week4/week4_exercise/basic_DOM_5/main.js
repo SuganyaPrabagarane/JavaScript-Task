@@ -22,9 +22,8 @@ const colorChange = () =>{
 button.addEventListener('click',colorChange);
 
 function updateColor(event){
-    divText.textContent = 'User Entered: ' + event.target.value;
-    divText.style.color = 'yellow'; // --- directly mention the text color 
-    
+    divText.style.color = event.target.value;
+    divText.style.color = divText.textContent;
 }
  userInput.addEventListener('input',updateColor);
 

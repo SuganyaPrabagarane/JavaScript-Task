@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  padding: 50px;
+  font-family: sans-serif;
+  line-height: 2;
+}
+
+.form {
+  padding: 50px 50px;
+  background-color: rgb(21, 105, 150);
+  height: 400px;
+  width: 400px;
+}
+
+label {
+  display: inline-block;
+  width: 100px;
+}
+
+input {
+  font-family: inherit; /* declare the same font which is declared in body */
+  font-size: inherit;
+  padding: 7px 5px;
+  border-radius: 5px;
+  border: 1px solid #eee;
+  box-shadow: inset 0 0 5px #8b5c5c;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: rgb(6, 112, 6);
+  color: white;
+  border-radius: 5px;
+  margin-inline-start: 35%;
+  cursor: pointer;
+  width: 50%;
+}
+
+button:hover {
+  background-color: green;
+}
