@@ -16,10 +16,10 @@
 - **week_04:**
   - [x] basic_DOM
   - [ ] ATM_simulator
-  - [ ] pancake_maker
+  - [x] pancake_maker
 - **week_05:**
   - [x] array_1
   - [x] array_2
-  - [ ] pancake_maker_2
+  - [x] pancake_maker_2
 - **week_06:**
-  - []Little Zoo
+  - []Little_Zoo
