@@ -12,57 +12,50 @@ const enterBtn = document.querySelector('#pinBtn');
 
 let currentBalance = 0;
 
-
 depositButton.addEventListener('click',() => {
-    depositAmount = Number(inputDeposit.value); // also write "+deposit.value" -- to change into number data type
+    depositAmount = parseFloat(inputDeposit.value); // also write "+depositAmount.value" -- to change into number data type
     deposit(depositAmount);
-    balance.innerText = currentBalance;
+    updateBalance();
     inputDeposit.value='';
 });
 
 withdrawButton.addEventListener('click',() => {
-     withdrawAmount = Number(inputWithdraw.value);
+     withdrawAmount = parseFloat(inputWithdraw.value);
      withdraw(withdrawAmount);
-    balance.innerText = currentBalance;
+     updateBalance();
     inputWithdraw.value='';
 
 });
 
-function checkBalance() {
-    return currentBalance;
+function updateBalance() {
+    balance.innerText = currentBalance;
 }
 
 function deposit(depositAmount){
-    
-    if (typeof depositAmount !== 'number'){
-        message.innerText = 'Please enter a valid number';
-        message.style.color = 'red';
-    } else if(depositAmount <= 0){
-        message.innerText = 'Please enter a valid amount';
-        message.style.color = 'red';
+
+    if (isNaN(depositAmount) || depositAmount <=0) {
+        message.innerText = 'Please enter a valid number'
+        message.style.color = 'red'
     } else {
         currentBalance += depositAmount;
-        message.innerText = 'Amount depositted to the account successfully.'
-        message.style.color = '0D8C55';
+        message.innerText = `Deposited ${depositAmount.toFixed(2)} € successfully`;
+        message.style.color = 'green'
+      
     }
 }
 
 function withdraw(withdrawAmount) {
-    // message.innerText = 'please enter the pin number';
-    // validatePin(pinNumber);
-    if (typeof withdrawAmount !== 'number'){
-        message.innerText = 'Please enter a valid number';
+
+    if (isNaN(withdrawAmount) || withdrawAmount <=0) {
+        message.innerText = 'Please enter a valid number'
         message.style.color = 'red';
-    } else if(withdrawAmount <= 0){
-        message.innerText = 'Please enter a valid amount';
-        message.style.color = 'red';
-    } else if(withdrawAmount > currentBalance){
-        message.innerText = 'Insufficient Funds.'
+    } else if(withdrawAmount > currentBalance) {
+        message.innerText = 'Insufficient balance'
         message.style.color = 'red';
     }else {
         currentBalance -= withdrawAmount;
-        message.innerText = 'Amount withdraw successfully.'
-        message.style.color = '0D8C55';
+        message.innerText = `Withdrew ${withdrawAmount.toFixed(2)} € successfully`;
+        message.style.color = 'green'
     }
 }
 
@@ -78,7 +71,10 @@ function validatePin(pinNumber) {
     if (pinNumber === 1234){
         message.innerText = 'Welcome, You can access your account'
         message.style.color = '0D8C55';
-    } else if(pinNumber == ''){
+        inputWithdraw.style.display = 'block'
+        inputDeposit.style.display = 'block'
+        
+    } else if(pinNumber == '' ){
         message.innerText = 'Please enter the pin number'
         message.style.color = 'red';
     } else{
