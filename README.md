@@ -15,11 +15,13 @@
   - [x] 8_ball
 - **week_04:**
   - [x] basic_DOM
-  - [ ] ATM_simulator
+  - [x] ATM_simulator
   - [x] pancake_maker
 - **week_05:**
   - [x] array_1
   - [x] array_2
   - [x] pancake_maker_2
 - **week_06:**
-  - []Little_Zoo
+  - [x] little_Zoo
+  - [ ]
+  - [ ]
