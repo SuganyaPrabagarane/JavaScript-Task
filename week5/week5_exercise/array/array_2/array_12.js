@@ -7,7 +7,5 @@ Expected outcome: ['Zebra', 'Leopard', 'Gazelle', 'Elephant']
 
 let safariAnimals = ['Zebra', 'Leopard', 'Elephant', 'Gazelle'];
 
-let sortedAnimals = safariAnimals.sort();
-
-let reversedAnimals = sortedAnimals.toReversed();
+let reversedAnimals = safariAnimals.toReversed();
 console.log(reversedAnimals);
