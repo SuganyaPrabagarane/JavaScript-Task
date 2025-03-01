@@ -23,5 +23,6 @@
   - [x] pancake_maker_2
 - **week_06:**
   - [x] little_Zoo
-  - [ ]
-  - [ ]
+  - [x] objects_1
+  - [x] objects_2
+  - [ ] objects_3
