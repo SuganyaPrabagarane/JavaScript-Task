@@ -11,7 +11,7 @@ const students = [
     { name: "Suganya", scores: [90, 95, 90, 92], averageScore: null },
 ]
 
-const updateAverageScore1=() =>{
+const updateAverageScore=() =>{
     let i=0;
     while(i<students.length){
         let total =0;
@@ -24,4 +24,14 @@ const updateAverageScore1=() =>{
         i++;
     }
 }
-updateAverageScore1();
+//updateAverageScore();
+
+function updateAverageScore1(students){
+ students.forEach(student => {
+    const totalScore = student.scores.reduce((sum,score)=> sum + score,0);
+    let average = totalScore / student.scores.length;
+    student.averageScore = average; 
+});
+console.log(students)
+}
+updateAverageScore1(students);

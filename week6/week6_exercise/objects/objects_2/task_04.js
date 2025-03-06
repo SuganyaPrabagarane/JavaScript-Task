@@ -9,7 +9,7 @@ const bankAccount = {
     transactions: [200.50, -50.00, 1000.00, -250.25, 50.00]
   };
 
-  function calculateBalance () {      // will  use reduce method to add transaction
+  function calculateBalance () {     
     let totalTransaction = 0;
     for (let i=0; i<bankAccount.transactions.length; i++){
         totalTransaction += bankAccount.transactions[i];
@@ -18,6 +18,13 @@ const bankAccount = {
     console.log(balanceAmount);
   }
   calculateBalance();
+
+  function calculateBalance1(bankAccount){
+    const totalTransaction =  bankAccount.transactions.reduce((total,transaction) => total + transaction,0);
+    let balanceAmount = bankAccount.balance - totalTransaction;
+    return balanceAmount;
+  }
+  console.log(calculateBalance1(bankAccount));
 
  
 
