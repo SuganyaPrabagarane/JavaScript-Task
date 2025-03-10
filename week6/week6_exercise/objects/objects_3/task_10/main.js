@@ -3,14 +3,14 @@ Create an object `shoppingList` with an array `items`.
 Add an input field and button to allow users to add new items to `items` and display the updated list.
 */
 
-const shoppingList = 
-    { items: ['apple', 'Banana','Curd'] }
+const shoppingList =
+    { items: ['apple', 'Banana', 'Curd'] }
 
 const inputItem = document.querySelector('#item');
 const addButton = document.querySelector('#addBtn');
 const displayIteam = document.querySelector('#display');
 
-shoppingList.items.forEach(item =>{
+shoppingList.items.forEach(item => {
     const itemList = document.createElement('li');
     itemList.textContent = item;
     displayIteam.appendChild(itemList);
@@ -28,4 +28,4 @@ const addItem = () => {
 }
 addButton.addEventListener('click', addItem)
 
-// Querry: Button should be disabled when the input box is empty. - avoid to create empty list
+// Query: Button should be disabled when the input box is empty. - avoid to create empty list

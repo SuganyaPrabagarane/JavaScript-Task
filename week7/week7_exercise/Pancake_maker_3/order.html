@@ -1,0 +1,40 @@
+<!--ORDER HTML Page-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="order-style.css" />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Html Page</title>
+  </head>
+  <body>
+    <header>
+      <h1>Pancake Order Details:</h1>
+      <button id="back">Back</button><br /><br />
+    </header>
+    <label for="searchBox">Search Order</label>
+    <input type="text" id="searchBox" placeholder="Search by name" />
+
+    <!-- Display Order List-->
+    <div class="orders">
+      <label for="status">Status</label>
+      <select id="status">
+        <option value="waiting">Waiting</option>
+        <option value="ready">Ready</option>
+        <option value="delivered">Delivered</option>
+      </select>
+      <ul id="orderlist">
+        <li id="id">Id</li>
+        <li id="name">Customer Name:</li>
+        <li id="pancake">Pancake Type</li>
+        <li id="toppings">Toppings</li>
+        <li id="extras">Extras</li>
+        <li id="delivery">Delivery Method</li>
+        <li id="total-price">Total Price</li>
+      </ul>
+    </div>
+
+    <script src="orders.js"></script>
+  </body>
+</html>
