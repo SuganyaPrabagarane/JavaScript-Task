@@ -47,6 +47,7 @@ const orderSummary = () => {
     summary.textContent = ` Name: ${customerName}, \n Pancake Type: ${pancakeType.value},\n  Toppings: ${toppingItem},\n Extras: ${extraItem}, \n Delivery Method: ${deliveryMethod.value}`;
 
     const orderConfirmation = () => {
+        alert('Order is confirmed')
         const orders = JSON.parse(localStorage.getItem("pancakeOrder")) || [];
 
         let id = Date.now();
@@ -63,12 +64,12 @@ const orderSummary = () => {
                 this.totalPrice = totalPrice;
                 this.status = status;
                 this.showInfo = function () {
-                    return `Id: ${this.id},\ncustomerName: ${this.customerName},\nselectedPancake: ${this.selectedPancake},\ntopping: ${this.topping},\nextras: ${this.extras},\ndeliveryMethod: ${this.deliveryMethod},\ntotalPrice: ${this.totalPrice},\nstatus: ${this.status}`;
+                    return `Id: ${this.id},\nName: ${this.customerName},\nPancake: ${this.selectedPancake},\nTopping: ${this.topping},\nExtras: ${this.extras},\nDeliveryMethod: ${this.deliveryMethod},\nTotalPrice: ${this.totalPrice},\nStatus: ${this.status}`;
                 };
             }
         }
 
-        const newOrder = new Orders(id, customerName, pancakeType.selectedOptions[0].textContent, toppingItem, extraItem, deliveryMethod.value, totalPriceDisplay.textContent, status);
+        const newOrder = new Orders(id, customerName, pancakeType.value, toppingItem, extraItem, deliveryMethod.value, totalPriceDisplay.textContent, status);
 
         summary.textContent = newOrder.showInfo();
         orders.push(newOrder);

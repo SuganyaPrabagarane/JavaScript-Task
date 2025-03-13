@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="order-style.css" />
+    <link rel="stylesheet" href="orderstyle.css" />
 
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,7 +10,7 @@
   </head>
   <body>
     <header>
-      <h1>Pancake Order Details:</h1>
+      <h1>Pancake Order Details updated:</h1>
       <button id="back">Back</button><br /><br />
     </header>
 
@@ -19,22 +19,26 @@
     <label for="searchBox">Search Order</label>
     <input type="text" id="searchBox" placeholder="Search by name or Id" />
 
-    <label for ='sort'>Sort Orders</label>
-    <select id="sort">
-        <option value="waiting">Waiting</option>
-        <option value="ready">Ready</option>
-        <option value="delievered">Delivered</option>
+
+    <label for ='filter'>Order Type</label>
+    <select id="filter">
+        <option value="All">All Orders</option>
+        <option value="Waiting">Waiting</option>
+        <option value="Ready">Ready</option>
+        <option value="Delivered">Delivered</option>
         
     </select>
+
+    <button id="sortBtn">Sort Orders</button>
   
 
   
       <div class="orders">
-        <div class = 'status'>
+       
       <ul id="orderlist"> <br>
-    </div>
+   
 </div>
 
-    <script src="orders.js"></script>
+    <script src="order.js"></script>
   </body>
 </html>

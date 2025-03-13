@@ -1,36 +1,12 @@
 const displayOrderList = document.querySelector("#orderlist");
 const backButtonOrderPage = document.querySelector("#back");
-const displayOrder = document.querySelector('.orders');
 const searchInput = document.querySelector('#searchBox')
 const removeButton = document.createElement('button');
+const filter = document.querySelector('#filter');
+const sortOrderButton = document.querySelector('#sortBtn');
 
 const returnedOrders = localStorage.getItem("pancakeOrder");
 const ordersObject = JSON.parse(returnedOrders);
-
-function createDropDownList(parentElement) {
-
-    const statusPara = document.createElement('p');
-    statusPara.classList.add('orderStatus-para'); // adding class name to 'p' element
-    statusPara.textContent = 'Status:'
-    parentElement.appendChild(statusPara);
-
-    const statusListBox = document.createElement('select');
-    statusListBox.classList.add('select-status') // adding class name to 'Select' element
-    statusListBox.id = ("status-select")
-    //statusListBox.value = orderStatus
-    parentElement.appendChild(statusListBox);
-    const optionsOfStatus = ['Waiting', 'Ready', 'Delivered'];
-
-    for (const option of optionsOfStatus) {
-        const dropDownList = document.createElement('option');
-        dropDownList.text = option;
-        statusListBox.appendChild(dropDownList);
-    }
-
-    return statusListBox;
-
-}
-
 
 function createRemoveButton(parentElement) {
     const removeButtons = document.createElement('button');
@@ -40,13 +16,36 @@ function createRemoveButton(parentElement) {
     return removeButtons;
 }
 
+function createDropDownList(parentElement) {
+    const statusPara = document.createElement('p');
+    statusPara.classList.add('orderStatus-para'); // adding class name to 'p' element
+    statusPara.textContent = 'Status:'
+    parentElement.appendChild(statusPara);
+
+    const dropDownList = document.createElement('select');
+    dropDownList.classList.add('select-status') // adding class name to 'Select' element
+    //dropDownList.id = ("status-select");
+    parentElement.appendChild(dropDownList);
+    const optionsOfStatus = ['', 'Waiting', 'Ready', 'Delivered'];
+
+    for (const option of optionsOfStatus) {
+        const nodeList = document.createElement('option');
+        nodeList.text = option;
+        dropDownList.appendChild(nodeList);
+    }
+
+    return dropDownList;
+}
+
+
 const displayOrdersOnPage = (ordersObject) => {
 
     displayOrderList.innerHTML = '';
+
     ordersObject.forEach((order) => {
         const orderList = document.createElement('li');
 
-        const statusValue = createDropDownList(orderList);
+        const statusDropDownList = createDropDownList(orderList);
 
         const status = document.createElement('p');
         const id = document.createElement("p");
@@ -58,7 +57,6 @@ const displayOrdersOnPage = (ordersObject) => {
         const totalPrice = document.createElement("p");
 
         status.textContent = `Status: ${order.status}`;
-        status.dataset.id = order.id
         id.textContent = `Id:${order.id}`;
         customerName.textContent = `Customer Name:${order.customerName}`;
         pancakeType.textContent = `Pancake Type:${order.selectedPancake}`;
@@ -77,6 +75,9 @@ const displayOrdersOnPage = (ordersObject) => {
         orderList.appendChild(totalPrice);
         displayOrderList.appendChild(orderList);
 
+        status.classList.add('status') // Adding class name
+
+
         const removeBtn = createRemoveButton(orderList);
         const removeOrder = () => {
             console.log('Order id is:', order.id);
@@ -88,32 +89,32 @@ const displayOrdersOnPage = (ordersObject) => {
         }
         removeBtn.addEventListener('click', removeOrder)
 
-        const changeStatus = () => {
+        const changeOrderStatus = () => {
 
-            if (statusValue.value === 'Delivered') {
-                order.status = 'Delivered';
-                // console.log('status style is', status.style.backgroundColor);
-                // status.style.backgroundColor = 'red';
-                // status.style.color = 'red';
-                // console.log('status style is', status.style.color);
+
+            if (statusDropDownList.value === 'Ready') {
+                order.status = 'Ready';
+                console.log('order status is:', order.status)
             }
-            else if (statusValue.value === 'Ready') {
-                order.status = 'Ready'
-                const option = document.getElementById("Ready")
-                // option.selected = true;
+            else if (statusDropDownList.value === 'Delivered') {
+                order.status = 'Delivered';
             }
             else {
-                order.status = 'Waiting'
-                const option = document.getElementById("Waiting")
-                // option.selected = true;
+                order.status = 'Waiting';
             }
 
+            localStorage.setItem('pancakeOrder', JSON.stringify(ordersObject));
+
             displayOrdersOnPage(ordersObject);
+
         }
-        statusValue.addEventListener('change', changeStatus)
+
+        statusDropDownList.addEventListener('change', changeOrderStatus)
+
 
     });
 };
+
 
 
 const searchOrderByName = () => {
@@ -126,8 +127,19 @@ const searchOrderByName = () => {
 }
 searchInput.addEventListener('change', searchOrderByName);
 
-
-
+const filterOrders = () => {
+    console.log('event triggered');
+    const selectedStatus = filter.value;
+    console.log('selected status', selectedStatus);
+    if (selectedStatus === 'All') {
+        displayOrdersOnPage(ordersObject);
+    }
+    else {
+        const filteredOrder = ordersObject.filter(order => order.status === selectedStatus)
+        displayOrdersOnPage(filteredOrder);
+    }
+}
+filter.addEventListener('change', filterOrders)
 
 
 const backToPancakePage = () => {
@@ -136,7 +148,18 @@ const backToPancakePage = () => {
 };
 backButtonOrderPage.addEventListener("click", backToPancakePage);
 
+const sortOrderByStatus = () => {
+    console.log('Event triggered')
+    const status = ['Waiting', 'Ready', 'Delivered']
+    ordersObject.sort((a, b) => {
+        return status.indexOf(a.status) - status.indexOf(b.status);
+    });
+    console.log(ordersObject);
+    displayOrdersOnPage(ordersObject);
+
+}
+sortOrderButton.addEventListener('click', sortOrderByStatus)
+
 
 displayOrdersOnPage(ordersObject);
-
 
