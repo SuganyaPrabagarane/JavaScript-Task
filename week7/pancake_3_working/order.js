@@ -33,20 +33,24 @@ function createDropDownList(parentElement) {
         node.text = option;
         // dropDownList.add(node);
         dropDownList.appendChild(node);
-
-        // if (node.text == 'Ready') { dropDownList.style.backgroundColor = 'blue' }
-        // if (node.text == 'Delivered') { dropDownList.style.backgroundColor = 'green' }
     }
-
     return dropDownList;
 
 }
 
 
-
 const displayOrdersOnPage = (ordersObject) => {
 
     displayOrderList.innerHTML = '';
+
+    // Error handling is not working
+
+    // try {
+    //     errorHandling(ordersObject)
+    // }
+    // catch (error) {
+    //     console.error(error.message);
+    // }
 
     ordersObject.forEach((order) => {
 
@@ -55,9 +59,6 @@ const displayOrdersOnPage = (ordersObject) => {
 
         const statusDropDownList = createDropDownList(orderList);
         const orderBgColor = document.querySelector('.list-color');
-        //changeBgColorByStatus(orderBgColor, order);
-
-
 
         const status = document.createElement('p');
         const id = document.createElement("p");
@@ -89,23 +90,16 @@ const displayOrdersOnPage = (ordersObject) => {
 
         status.classList.add('order-status');
 
-
-
         const removeBtn = createRemoveButton(orderList);
 
         const removeOrder = () => {
-            console.log('Order id is:', order.id);
             const filteredOrders = ordersObject.filter(o => o.id !== order.id)
             orderList.remove();
-            console.log(filteredOrders);
             localStorage.setItem('pancakeOrder', JSON.stringify(filteredOrders));
-
         }
         removeBtn.addEventListener('click', removeOrder)
 
-
         const changeOrderStatus = () => {
-
             if (statusDropDownList.value === 'Ready') {
                 order.status = 'Ready';
                 status.textContent = `Status: ${order.status}`;
@@ -130,11 +124,9 @@ const displayOrdersOnPage = (ordersObject) => {
         statusDropDownList.addEventListener('change', changeOrderStatus)
 
     });
-
 }
 
 const searchOrder = () => {
-    console.log('triggered')
     const searchByName = searchInput.value.toLowerCase().trim();
     const searchById = Number(searchInput.value);
     const filteredOrdersByName = ordersObject.filter(order => order.customerName.includes(searchByName) || (order.id == searchById));
@@ -144,9 +136,7 @@ const searchOrder = () => {
 searchInput.addEventListener('change', searchOrder);
 
 const filterOrders = () => {
-    console.log('event triggered');
     const selectedStatus = filterOrderByStatus.value;
-    console.log('selected status', selectedStatus);
     if (selectedStatus === 'All') {
         displayOrdersOnPage(ordersObject);
     }
@@ -159,27 +149,32 @@ filterOrderByStatus.addEventListener('change', filterOrders)
 
 
 const sortOrderByStatus = () => {
-    console.log('Event triggered')
     const status = ['Waiting', 'Ready', 'Delivered']
     ordersObject.sort((a, b) => {
         return status.indexOf(a.status) - status.indexOf(b.status);
     });
-    console.log(ordersObject);
     displayOrdersOnPage(ordersObject);
 
 }
 sortOrderButton.addEventListener('click', sortOrderByStatus)
 
-// const changeColorByStatus = () => {
-//     const orderColorByStatus = document.querySelector('.')
-// }
 
 const backToPancakePage = () => {
-    console.log("event triggered");
     window.location.href = "index.html";
 };
 backButtonOrderPage.addEventListener("click", backToPancakePage);
 
+function errorHandling(order) {
+    if (order.length <= 0) {
+        throw new error('No orders in the list, get new orders');
+    }
+    console.log('The order length is:', order.length);
+}
+
 
 
 displayOrdersOnPage(ordersObject);
+
+
+// 1. Error handling is not working
+// 2. How to store changed background color in local storage

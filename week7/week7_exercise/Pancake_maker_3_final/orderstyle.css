@@ -18,8 +18,9 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 30px;
-  background-color: #47627f;
-  color: #0b0505;
+  background-color: #06315f;
+  /* color: #0b0505; */
+  color: white;
 }
 
 button {
@@ -99,7 +100,7 @@ li p {
 .select-dropdownlist {
   display: inline;
   margin-left: 3vh;
-  /* background-color: rgb(244, 244, 8);*/
+  /* background-color: rgb(244, 244, 8); */
 }
 
 /* .select-dropdownlist :first-child :checked {

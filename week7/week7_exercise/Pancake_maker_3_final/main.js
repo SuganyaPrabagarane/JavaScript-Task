@@ -74,10 +74,12 @@ const orderSummary = () => {
 
         summary.innerHTML = newOrder.showInfo();
         orders.push(newOrder);
-        //let orderReceipt = orders.join('\n');
 
         const ordersJSON = JSON.stringify(orders);
         localStorage.setItem("pancakeOrder", ordersJSON);
+
+        form.reset(); // to clear the input fields
+
     };
     confirmOrder.addEventListener("click", orderConfirmation);
 };

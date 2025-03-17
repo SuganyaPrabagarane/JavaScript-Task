@@ -34,8 +34,6 @@ function createDropDownList(parentElement) {
         // dropDownList.add(node);
         dropDownList.appendChild(node);
 
-        // if (node.text == 'Ready') { dropDownList.style.backgroundColor = 'blue' }
-        // if (node.text == 'Delivered') { dropDownList.style.backgroundColor = 'green' }
     }
 
     return dropDownList;
@@ -43,10 +41,18 @@ function createDropDownList(parentElement) {
 }
 
 
-
 const displayOrdersOnPage = (ordersObject) => {
 
     displayOrderList.innerHTML = '';
+
+    // Error handling is not working
+
+    // try {
+    //     errorHandling(ordersObject)
+    // }
+    // catch (error) {
+    //     console.error(error.message);
+    // }
 
     ordersObject.forEach((order) => {
 
@@ -55,9 +61,6 @@ const displayOrdersOnPage = (ordersObject) => {
 
         const statusDropDownList = createDropDownList(orderList);
         const orderBgColor = document.querySelector('.list-color');
-        //changeBgColorByStatus(orderBgColor, order);
-
-
 
         const status = document.createElement('p');
         const id = document.createElement("p");
@@ -88,7 +91,6 @@ const displayOrdersOnPage = (ordersObject) => {
         displayOrderList.appendChild(orderList);
 
         status.classList.add('order-status');
-
 
 
         const removeBtn = createRemoveButton(orderList);
@@ -170,9 +172,6 @@ const sortOrderByStatus = () => {
 }
 sortOrderButton.addEventListener('click', sortOrderByStatus)
 
-// const changeColorByStatus = () => {
-//     const orderColorByStatus = document.querySelector('.')
-// }
 
 const backToPancakePage = () => {
     console.log("event triggered");
@@ -180,6 +179,17 @@ const backToPancakePage = () => {
 };
 backButtonOrderPage.addEventListener("click", backToPancakePage);
 
+function errorHandling(order) {
+    if (order.length <= 0) {
+        throw new error('No orders in the list, get new orders');
+    }
+    console.log('The order length is:', order.length);
+}
+
 
 
 displayOrdersOnPage(ordersObject);
+
+
+// 1. Error handling is not working
+// 2. How to store changed background color in local storage

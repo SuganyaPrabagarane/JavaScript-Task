@@ -44,7 +44,6 @@ const orderSummary = () => {
         (item) => item.value
     );
 
-
     summary.innerHTML = ` Name: ${customerName} <br> Pancake Type: ${pancakeType.value} <br>  Toppings: ${toppingItem} <br> Extras: ${extraItem} <br>  Delivery Method: ${deliveryMethod.value}`;
 
     const orderConfirmation = () => {
@@ -74,14 +73,16 @@ const orderSummary = () => {
 
         summary.innerHTML = newOrder.showInfo();
         orders.push(newOrder);
-        //let orderReceipt = orders.join('\n');
 
         const ordersJSON = JSON.stringify(orders);
         localStorage.setItem("pancakeOrder", ordersJSON);
+
+        form.reset(); // to clear the input fields
     };
     confirmOrder.addEventListener("click", orderConfirmation);
 };
 orderButton.addEventListener("click", orderSummary);
+
 
 const checkOrderList = () => {
     //window.location.href = 'order.html'
