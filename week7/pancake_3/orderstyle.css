@@ -8,6 +8,9 @@ body {
   font-family: sans-serif;
   font-size: 1rem;
   line-height: 1.2;
+  background-color: #e9e3e3;
+  color: hsl(0, 0%, 0%);
+  font-weight: 580;
 }
 
 header {
@@ -15,19 +18,22 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 30px;
-  background-color: rgb(86, 170, 150);
+  background-color: #47627f;
+  color: #0b0505;
 }
 
 button {
-  width: 15vh;
-  height: 8vh;
-  background-color: rgb(10, 104, 141);
+  width: 12vh;
+  height: 6vh;
+  background-color: #ae3f5d;
   border-radius: 5px;
   color: white;
+  font-weight: 600;
+  margin-left: 5vh;
 }
 
 button:hover {
-  background-color: rgb(7, 88, 120);
+  background-color: rgb(130, 5, 53);
 }
 
 label {
@@ -38,15 +44,16 @@ label {
 input {
   font-family: inherit;
   font-size: inherit;
-  width: 40vh;
+  width: 30vh;
   height: 5vh;
   border-radius: 5px;
   box-shadow: inset 0 0 5px rgb(137, 100, 77);
   /* padding: 10px 5px; */
 }
 select {
-  width: 15vh;
-  height: 20px;
+  width: 20vh;
+  height: 4vh;
+  border-radius: 5px;
 }
 
 div {
@@ -54,6 +61,7 @@ div {
   height: 45vh;
   margin: 30px;
   justify-content: center;
+  margin-left: 30vh;
 }
 
 ul {
@@ -69,12 +77,17 @@ li {
   justify-content: center;
   align-items: center;
   margin: 10px;
-  width: auto;
-  gap: 100px;
+  width: 60vh;
+  gap: 400px;
   box-sizing: border-box;
-  border: 2px solid black;
+  border: 2px solid rgb(93, 1, 1);
   border-radius: 5px;
   padding: 15px;
+}
+
+li p {
+  line-height: 3.5vh;
+  margin-left: 5vh;
 }
 
 .orderStatus-para {
@@ -83,23 +96,35 @@ li {
   align-items: center;
 }
 
-.select-status {
-  margin: 15px;
+.select-dropdownlist {
+  display: inline;
+  margin-left: 3vh;
+  /* background-color: rgb(244, 244, 8);*/
 }
+
+/* .select-dropdownlist :first-child :checked {
+  background-color: #ad0a36;
+}
+
+.select-dropdownlist :nth-child(2) :checked {
+  background-color: #ad0a36;
+} */
 
 .removeBtn {
   display: block;
-  width: 12vh;
-  height: 6vh;
 }
 
-#sort {
+#filter {
   width: 25vh;
   height: 5vh;
   border-radius: 5px;
   box-shadow: inset 0 0 5px rgb(137, 100, 77);
 }
 
-.coloredText {
-  color: red;
+#sortBtn {
+  margin-left: 10vh;
+}
+
+.searchBox > label {
+  width: 25vh;
 }

@@ -8,8 +8,9 @@ body {
   font-family: sans-serif;
   font-size: 1rem;
   line-height: 1.2;
-  background-color: #f2aeb5;
-  color: #000000;
+  background-color: #e9e3e3;
+  color: hsl(0, 0%, 0%);
+  font-weight: 580;
 }
 
 header {
@@ -17,25 +18,23 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 30px;
-  background-color: #03728b;
-  color: #001e0d;
+  background-color: #47627f;
+  color: #0b0505;
 }
 
 button {
-  width: 15vh;
-  height: 8vh;
-  background-color: #8a3242;
+  width: 12vh;
+  height: 6vh;
+  background-color: #ae3f5d;
   border-radius: 5px;
   color: white;
+  font-weight: 600;
+  margin-left: 5vh;
 }
 
 button:hover {
-  background-color: rgb(86, 1, 34);
+  background-color: rgb(130, 5, 53);
 }
-
-/* p {
-  font-weight: bold;
-} */
 
 label {
   display: inline-block;
@@ -62,6 +61,7 @@ div {
   height: 45vh;
   margin: 30px;
   justify-content: center;
+  margin-left: 30vh;
 }
 
 ul {
@@ -77,12 +77,17 @@ li {
   justify-content: center;
   align-items: center;
   margin: 10px;
-  width: 100vh;
+  width: 60vh;
   gap: 400px;
   box-sizing: border-box;
   border: 2px solid rgb(93, 1, 1);
   border-radius: 5px;
   padding: 15px;
+}
+
+li p {
+  line-height: 3.5vh;
+  margin-left: 5vh;
 }
 
 .orderStatus-para {
@@ -91,14 +96,22 @@ li {
   align-items: center;
 }
 
-.select-status {
+.select-dropdownlist {
+  display: inline;
   margin-left: 3vh;
+  /* background-color: rgb(244, 244, 8);*/
 }
+
+/* .select-dropdownlist :first-child :checked {
+  background-color: #ad0a36;
+}
+
+.select-dropdownlist :nth-child(2) :checked {
+  background-color: #ad0a36;
+} */
 
 .removeBtn {
   display: block;
-  width: 12vh;
-  height: 6vh;
 }
 
 #filter {
@@ -110,4 +123,8 @@ li {
 
 #sortBtn {
   margin-left: 10vh;
+}
+
+.searchBox > label {
+  width: 25vh;
 }
