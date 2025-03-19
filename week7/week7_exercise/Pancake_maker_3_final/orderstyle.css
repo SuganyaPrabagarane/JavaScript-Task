@@ -78,10 +78,12 @@ li {
   justify-content: center;
   align-items: center;
   margin: 10px;
-  width: 60vh;
+  width: 80vh;
   gap: 400px;
-  box-sizing: border-box;
-  border: 2px solid rgb(93, 1, 1);
+  /* box-sizing: border-box; */
+  border-left: 6px #0a7103;
+  /* border: 2px solid rgb(93, 1, 1); */
+  box-shadow: 0px 8px 10px rgb(236, 6, 6);
   border-radius: 5px;
   padding: 15px;
 }
@@ -100,16 +102,7 @@ li p {
 .select-dropdownlist {
   display: inline;
   margin-left: 3vh;
-  /* background-color: rgb(244, 244, 8); */
 }
-
-/* .select-dropdownlist :first-child :checked {
-  background-color: #ad0a36;
-}
-
-.select-dropdownlist :nth-child(2) :checked {
-  background-color: #ad0a36;
-} */
 
 .removeBtn {
   display: block;
@@ -128,4 +121,19 @@ li p {
 
 .searchBox > label {
   width: 25vh;
+}
+
+.orderstatus-waiting {
+  color: rgb(0, 3, 18);
+  background-color: rgb(239, 239, 159);
+}
+
+.orderstatus-ready {
+  background-color: rgb(132, 176, 215);
+  color: #000001;
+}
+
+.orderstatus-delivered {
+  background-color: rgb(146, 224, 157);
+  color: #000001;
 }

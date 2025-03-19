@@ -9,35 +9,47 @@
     <title>Order Html Page</title>
   </head>
   <body>
-    <header>
-      <h1>Pancake Order Details updated:</h1>
-      <button id="back">Back</button><br /><br />
-    </header>
-
+    <div class="pancake-container">
+      <div class="container">
+        <div class="header-container">
+          <header>
+          <h1>Pancake Order Details</h1>
+          <button id="back">Back</button><br /><br />
+          </header>
+        </div>
     
+        <section class ="searchBox">
+           <!-- <label for="searchBox">Search Order</label>-->
+          <input type="text" id="searchBox" placeholder="Search order by Name or Order Id" />
 
-    <label for="searchBox">Search Order</label>
-    <input type="text" id="searchBox" placeholder="Search by name or Id" />
+         <!-- <label for ='filter'>Order Type</label> -->
+          <!-- <div class="filter-sort">-->
+            <select id="filter">
+            <option value="All">All Orders</option>
+            <option value="Waiting">Waiting</option>
+            <option value="Ready">Ready</option>
+            <option value="Delivered">Delivered</option>  
+            </select>
+            <button id="sortBtn">Sort Orders</button>
+        </section>
+        <!-- </div>-->
 
+        <div class="orders">
+          <ul id="orderlist"> <br>
+          </div>
 
-    <label for ='filter'>Order Type</label>
-    <select id="filter">
-        <option value="All">All Orders</option>
-        <option value="Waiting">Waiting</option>
-        <option value="Ready">Ready</option>
-        <option value="Delivered">Delivered</option>
-        
-    </select>
+      </div>
+        <div class="image-container">
+          <img src="/week7/week7_exercise/practise/classic-pancake.jpg" alt="Delicious pancakes" />
+        </div>
 
-    <button id="sortBtn">Sort Orders</button>
-  
-
-  
-      <div class="orders">
-       
-      <ul id="orderlist"> <br>
+    </div>
+      
+     
    
-</div>
+  
+   
+   
 
     <script src="order.js"></script>
   </body>

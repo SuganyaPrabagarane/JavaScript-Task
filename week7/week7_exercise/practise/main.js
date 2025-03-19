@@ -44,7 +44,7 @@ const orderSummary = () => {
         (item) => item.value
     );
 
-    summary.textContent = ` Name: ${customerName}, \n Pancake Type: ${pancakeType.value},\n  Toppings: ${toppingItem},\n Extras: ${extraItem}, \n Delivery Method: ${deliveryMethod.value}`;
+    summary.innerHTML = ` Name: ${customerName} <br> Pancake Type: ${pancakeType.value} <br>  Toppings: ${toppingItem} <br> Extras: ${extraItem} <br>  Delivery Method: ${deliveryMethod.value}`;
 
     const orderConfirmation = () => {
         alert('Order is confirmed')
@@ -64,23 +64,25 @@ const orderSummary = () => {
                 this.totalPrice = totalPrice;
                 this.status = status;
                 this.showInfo = function () {
-                    return `Id: ${this.id},\nName: ${this.customerName},\nPancake: ${this.selectedPancake},\nTopping: ${this.topping},\nExtras: ${this.extras},\nDeliveryMethod: ${this.deliveryMethod},\nTotalPrice: ${this.totalPrice},\nStatus: ${this.status}`;
+                    return `Id: ${this.id} <br> Name: ${this.customerName} <br> Pancake: ${this.selectedPancake} <br> Topping: ${this.topping} <br> Extras: ${this.extras} <br> DeliveryMethod: ${this.deliveryMethod} <br> TotalPrice: ${this.totalPrice} <br> Status: ${this.status}`;
                 };
             }
         }
 
         const newOrder = new Orders(id, customerName, pancakeType.value, toppingItem, extraItem, deliveryMethod.value, totalPriceDisplay.textContent, status);
 
-        summary.textContent = newOrder.showInfo();
+        summary.innerHTML = newOrder.showInfo();
         orders.push(newOrder);
-        //let orderReceipt = orders.join('\n');
 
         const ordersJSON = JSON.stringify(orders);
         localStorage.setItem("pancakeOrder", ordersJSON);
+
+        form.reset(); // to clear the input fields
     };
     confirmOrder.addEventListener("click", orderConfirmation);
 };
 orderButton.addEventListener("click", orderSummary);
+
 
 const checkOrderList = () => {
     //window.location.href = 'order.html'
