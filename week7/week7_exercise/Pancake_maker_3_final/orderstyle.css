@@ -9,18 +9,23 @@ body {
   font-size: 1rem;
   line-height: 1.2;
   background-color: #e9e3e3;
-  color: hsl(0, 0%, 0%);
   font-weight: 580;
+  background-image: url(Pancakes-order.jpg);
+  backdrop-filter: blur(15px);
+  background-size: cover;
+  background-position: center;
 }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 30px;
-  background-color: #06315f;
-  /* color: #0b0505; */
+.container-header {
+  background-color: #1c3f63;
   color: white;
+  height: 27vh;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
 }
 
 button {
@@ -37,32 +42,53 @@ button:hover {
   background-color: rgb(130, 5, 53);
 }
 
-label {
-  display: inline-block;
-  width: 180px;
-  padding: 40px;
-}
-input {
-  font-family: inherit;
-  font-size: inherit;
-  width: 30vh;
+#filter {
+  width: 25vh;
   height: 5vh;
   border-radius: 5px;
   box-shadow: inset 0 0 5px rgb(137, 100, 77);
-  /* padding: 10px 5px; */
+  margin-top: 8px;
+  margin-left: 70vh;
+}
+
+#sortBtn {
+  margin-left: 8vh;
+  margin-top: 4px;
+}
+input {
+  display: block;
+  font-family: inherit;
+  font-size: 1.2rem;
+  width: 80vh;
+  height: 5.5vh;
+  border-radius: 5px;
+  box-shadow: inset 0 0 5px rgb(137, 100, 77);
+  margin-top: 2vh;
+  margin-left: 50vh;
+  justify-content: center;
 }
 select {
   width: 20vh;
   height: 4vh;
   border-radius: 5px;
+  font-family: inherit;
+  font-size: inherit;
 }
 
-div {
-  width: 45vh;
-  height: 45vh;
+/* .order-container {
+  display: flex;
+  align-items: center;
+  height: 55vh;
+} */
+
+.orders {
+  width: 50vh;
+  height: 50vh;
   margin: 30px;
-  justify-content: center;
-  margin-left: 30vh;
+  /* row-gap: 20px; */
+  margin-left: 1vh;
+  display: flex;
+  flex: 1;
 }
 
 ul {
@@ -77,15 +103,14 @@ li {
   display: block;
   justify-content: center;
   align-items: center;
-  margin: 10px;
-  width: 80vh;
+  margin: 40px;
+  width: 120vh;
   gap: 400px;
-  /* box-sizing: border-box; */
   border-left: 6px #0a7103;
-  /* border: 2px solid rgb(93, 1, 1); */
   box-shadow: 0px 8px 10px rgb(236, 6, 6);
   border-radius: 5px;
   padding: 15px;
+  position: relative;
 }
 
 li p {
@@ -101,26 +126,12 @@ li p {
 
 .select-dropdownlist {
   display: inline;
-  margin-left: 3vh;
+  margin-left: 5vh;
+  background-color: rgb(218, 238, 219);
 }
 
 .removeBtn {
   display: block;
-}
-
-#filter {
-  width: 25vh;
-  height: 5vh;
-  border-radius: 5px;
-  box-shadow: inset 0 0 5px rgb(137, 100, 77);
-}
-
-#sortBtn {
-  margin-left: 10vh;
-}
-
-.searchBox > label {
-  width: 25vh;
 }
 
 .orderstatus-waiting {
@@ -136,4 +147,15 @@ li p {
 .orderstatus-delivered {
   background-color: rgb(146, 224, 157);
   color: #000001;
+}
+
+.pancake-image {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  transition: all 2s ease;
+}
+
+.pancake-image:hover {
+  transform: scale(1.2);
 }

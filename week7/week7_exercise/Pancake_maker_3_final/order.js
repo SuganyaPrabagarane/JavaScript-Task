@@ -4,6 +4,7 @@ const searchInput = document.querySelector('#searchBox')
 const removeButton = document.createElement('button');
 const filterOrderByStatus = document.querySelector('#filter');
 const sortOrderButton = document.querySelector('#sortBtn');
+const pancakeImage = document.querySelector('#image');
 
 const returnedOrders = localStorage.getItem("pancakeOrder");
 const ordersObject = JSON.parse(returnedOrders);
@@ -17,21 +18,14 @@ function createRemoveButton(parentElement) {
 }
 
 function createDropDownList(parentElement) {
-    const statusPara = document.createElement('p');
-    statusPara.classList.add('orderStatus-para'); // adding class name to 'p' element
-    statusPara.textContent = 'Status:'
-    parentElement.appendChild(statusPara);
-
     const dropDownList = document.createElement('select');
     dropDownList.classList.add('select-dropdownlist');
     parentElement.appendChild(dropDownList);
-    dropDownList.style.backgroundColor = '#F8E870';
     const optionNode = ['Waiting', 'Ready', 'Delivered'];
 
     for (const option of optionNode) {
         const node = document.createElement('option');
         node.text = option;
-        // dropDownList.add(node);
         dropDownList.appendChild(node);
     }
     return dropDownList;
@@ -48,7 +42,6 @@ function changeOrderColorByStatus(parentElement, order) {
     if (order.status == 'Delivered') {
         parentElement.classList.add('orderstatus-delivered');
     }
-    //displayOrdersOnPage(ordersObject);
 }
 
 
@@ -68,10 +61,8 @@ const displayOrdersOnPage = (ordersObject) => {
     ordersObject.forEach((order) => {
 
         const orderList = document.createElement('li');
-        orderList.classList.add('list-color');
 
         const statusDropDownList = createDropDownList(orderList);
-        const orderBgColor = document.querySelector('.list-color');
         changeOrderColorByStatus(orderList, order);
 
         const status = document.createElement('p');
@@ -82,6 +73,7 @@ const displayOrdersOnPage = (ordersObject) => {
         const extras = document.createElement("p");
         const deliveryMethod = document.createElement("p");
         const totalPrice = document.createElement("p");
+        const image = document.createElement('img');
 
         status.textContent = `Status: ${order.status}`;
         id.textContent = `Id:${order.id}`;
@@ -91,6 +83,7 @@ const displayOrdersOnPage = (ordersObject) => {
         extras.textContent = `Extras:${order.extras}`;
         deliveryMethod.textContent = `Delivery Method:${order.deliveryMethod}`;
         totalPrice.textContent = `Total Price:${order.totalPrice}`;
+        image.textContent = `${order.selectedPancake}`;
 
         orderList.appendChild(status)
         orderList.appendChild(id);
@@ -100,15 +93,15 @@ const displayOrdersOnPage = (ordersObject) => {
         orderList.appendChild(extras);
         orderList.appendChild(deliveryMethod);
         orderList.appendChild(totalPrice);
+        orderList.appendChild(image);
         displayOrderList.appendChild(orderList);
-
-        status.classList.add('order-status');
 
         const removeBtn = createRemoveButton(orderList);
 
         const removeOrder = () => {
             const filteredOrders = ordersObject.filter(o => o.id !== order.id)
             orderList.remove();
+            alert('order is removed');
             localStorage.setItem('pancakeOrder', JSON.stringify(filteredOrders));
         }
         removeBtn.addEventListener('click', removeOrder)
@@ -117,21 +110,40 @@ const displayOrdersOnPage = (ordersObject) => {
             if (statusDropDownList.value === 'Ready') {
                 order.status = 'Ready';
                 status.textContent = `Status: ${order.status}`;
+                orderList.style.color = '#010127';
+
             } else if (statusDropDownList.value === 'Delivered') {
                 order.status = 'Delivered';
                 status.textContent = `Status: ${order.status}`;
+                orderList.style.color = 'darkgreen';
             } else {
                 order.status = 'Waiting';
                 status.textContent = `Status: ${order.status}`;
-                // statusDropDownList.style.backgroundColor = 'yellow';
-                // orderList.style.color = 'yellow';
+                orderList.style.color = 'yellow';
             }
+
             localStorage.setItem('pancakeOrder', JSON.stringify(ordersObject));
 
         }
         statusDropDownList.addEventListener('change', changeOrderStatus)
 
+        // Upload pancake image
+        image.classList.add('pancake-image');
+        if (order.selectedPancake === 'Classic') {
+            console.log('orderid:', order.id, order.selectedPancake);
+            image.src = "/week7/pancake_3_working/classic-pancake.jpg";
+        }
+        else if (order.selectedPancake === 'Chocolate') {
+            image.src = "/week7/week7_exercise/practise/Chocolate-Pancakes.jpg";
+        }
+        else if (order.selectedPancake === 'Blueberry') {
+            image.src = "/week7/week7_exercise/practise/pancake-blueberry.jpg";
+        }
+        image.width = 300;
+        image.height = 300;
+
     });
+
 }
 
 const searchOrder = () => {
@@ -180,9 +192,7 @@ function errorHandling(order) {
 }
 
 
-
 displayOrdersOnPage(ordersObject);
 
 
 // 1. Error handling is not working
-// 2. How to store changed background color in local storage
