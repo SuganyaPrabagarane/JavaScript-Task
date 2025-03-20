@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /* Task 1: Try-Catch for Debugging
 /*
@@ -11,13 +11,11 @@ task1(); // Should log: "Error caught: function is not defined"
 
 function task1() {
     try {
-        let c = 2 + 4;
-        add();
+        undefinedFunction();
     } catch (error) {
-        console.error('Task_1: Error caught: function is not defined');
+        console.log("Error caught: function is not defined");
     }
 }
-task1();
 
 /* Task 2: Handle ReferenceError
 /*
@@ -30,13 +28,11 @@ task2(); // Should log: "ReferenceError caught: myVariable is not defined"
 
 function task2() {
     try {
-        c = a + 5;
+        console.log(myVariable);
     } catch (error) {
-        console.error('Task_2: ReferenceError caught: variable is not defined');
-
+        console.log("ReferenceError caught: myVariable is not defined");
     }
 }
-task2();
 
 /* Task 3: Using Finally
 /*
@@ -48,16 +44,13 @@ task3(); // Should log an error message and "Task completed."
 
 function task3() {
     try {
-        c = a + b;
-        add();
+        throw new Error("Error message");
     } catch (error) {
-        console.error('Task_3: Reference Error: variables are not defined');
-        console.error('Error caught: Undefined function');
+        console.log(error.message);
     } finally {
-        console.log('Task completed')
+        console.log("Task completed.");
     }
 }
-task3();
 
 /* Task 4: Fix JSON Parsing Error
 /*
@@ -70,14 +63,14 @@ parseJSON("Invalid JSON text"); // Should log an error and return null
 
 function parseJSON(jsonString) {
     try {
-        const object = JSON.parse(jsonString);
-        console.log('Task_4:', object)
+        return JSON.parse(jsonString);
     } catch (error) {
-        console.error('Task_4: Error caught: Invalid JSON');
+        console.log("Invalid JSON format");
     }
 }
-parseJSON('{"name": "Alice", "age": 25}');
-parseJSON("Invalid JSON text");
+
+console.log(parseJSON('{"name": "Alice", "age": 25}'));
+console.log(parseJSON("Invalid JSON text"));
 
 /* Task 5: Throwing a Custom Error
 /*
@@ -90,15 +83,17 @@ checkAge(16); // Should log: "Error: You must be at least 18."
 
 function checkAge(age) {
     try {
-        if (age >= 18) {
-            console.log('Task_5: Access granted.')
+        if (age < 18) {
+            throw new Error("You must be at least 18.");
         }
+        console.log("Access granted.");
     } catch (error) {
-        console.error('Task_5: Error: You must be at least 18.');
+        console.log(error.message);
     }
 }
+
 checkAge(20);
-checkAge(16); // not getting error message
+checkAge(16);
 
 /* Task 6: Save and Retrieve from LocalStorage
 /*
@@ -113,22 +108,23 @@ console.log(getUser()); // Should log an error and return null
 */
 
 function saveUser(user) {
-    const userJSON = JSON.stringify(user);
-    //localStorage.setItem('user', userJSON);
-    //localStorage.setItem("user", "{ invalid JSON }");
+    try {
+        localStorage.setItem("user", JSON.stringify(user));
+    } catch (error) {
+        console.log("Error saving user");
+    }
 }
 
 function getUser() {
     try {
-        const returnedUser = localStorage.getItem('user');
-        const userObject = JSON.parse(returnedUser);
-        console.log(userObject);
+        return JSON.parse(localStorage.getItem("user"));
     } catch (error) {
-        console.log('Task_6: Error: Invalid JSON');
+        console.log("Error retrieving user");
     }
 }
+
 saveUser({ name: "Alice", age: 25 });
-//console.log(getUser());
+console.log(getUser());
 
 /* Task 7: Check if Object Property Exists
 /*
@@ -141,15 +137,11 @@ checkProperty({ name: "Bob", age: 30 }, "email"); // Should log "Property not fo
 
 function checkProperty(obj, key) {
     try {
-        let checking = obj[key];
-        console.log('Task_7:', checking);
-
+        return obj[key];
     } catch (error) {
-        console.log('Task_7: Property not found.')
+        console.log("Property not found");
     }
 }
-checkProperty({ name: "Bob", age: 30 }, "name");
-checkProperty({ name: "Bob", age: 30 }, "email");
 
 /* Task 8: Fetch API Error Handling
 /*
@@ -162,15 +154,16 @@ fetchData("invalid-url"); // Should log network error
 
 async function fetchData(url) {
     try {
-        fetch(url);
-        console.log('Task 8: data fetched from the url')
-
+        const response = await fetch(url);
+        const data = await response.json();
+        return data;
     } catch (error) {
-        console.log(error.message);
+        console.log("Network error");
     }
 }
-fetchData("https://jsonplaceholder.typicode.com/users");
-fetchData("invalid-url");
+
+console.log(fetchData("https://jsonplaceholder.typicode.com/users"));
+console.log(fetchData("invalid-url"));
 
 /* Task 9: Fix a URI Error
 /*
@@ -181,9 +174,16 @@ task9("https%3A%2F%2Fexample.com"); // Should decode properly
 task9("%"); // Should log URIError
 */
 
-function task9(malformedURI) {
-    // Your code here
+function checkBrokenURI(malformedURI) {
+    try {
+        return decodeURIComponent(malformedURI);
+    } catch (error) {
+        console.log("URIError");
+    }
 }
+
+console.log(checkBrokenURI("https%3A%2F%2Fexample.com"));
+console.log(checkBrokenURI("%"));
 
 /* Task 10: Clear LocalStorage
 /*
@@ -196,9 +196,9 @@ clearStorage(); // Should log "LocalStorage cleared."
 function clearStorage() {
     try {
         localStorage.clear();
-        console.log('Task 10: Local storage cleared');
     } catch (error) {
-        console.error(error.message);
+        console.log("Error clearing LocalStorage");
     }
 }
+
 clearStorage();

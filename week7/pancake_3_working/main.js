@@ -33,6 +33,9 @@ const changeHandler = (event) => {
 form.addEventListener("change", changeHandler);
 
 const orderSummary = () => {
+
+    confirmOrder.classList.toggle('confirmButton'); // Toggle the confirm order button
+
     const customerName = (nameInput.value).toLowerCase().trim();
     const deliveryMethod = document.querySelector(".delivery:checked");
 
@@ -44,7 +47,10 @@ const orderSummary = () => {
         (item) => item.value
     );
 
-    summary.innerHTML = ` Name: ${customerName} <br> Pancake Type: ${pancakeType.value} <br>  Toppings: ${toppingItem} <br> Extras: ${extraItem} <br>  Delivery Method: ${deliveryMethod.value}`;
+    const toppingMessage = toppingItem.length > 0 ? toppingItem.join(',') : 'No toppings';
+    const extraMessage = extraItem.length > 0 ? extraItem.join(',') : 'No extras';
+
+    summary.innerHTML = ` Name: ${customerName} <br> Pancake Type: ${pancakeType.value} <br>  Toppings: ${toppingMessage} <br> Extras: ${extraMessage} <br>  Delivery Method: ${deliveryMethod.value}`;
 
     const orderConfirmation = () => {
         alert('Order is confirmed')
@@ -69,7 +75,7 @@ const orderSummary = () => {
             }
         }
 
-        const newOrder = new Orders(id, customerName, pancakeType.value, toppingItem, extraItem, deliveryMethod.value, totalPriceDisplay.textContent, status);
+        const newOrder = new Orders(id, customerName, pancakeType.value, toppingMessage, extraMessage, deliveryMethod.value, totalPriceDisplay.textContent, status);
 
         summary.innerHTML = newOrder.showInfo();
         orders.push(newOrder);

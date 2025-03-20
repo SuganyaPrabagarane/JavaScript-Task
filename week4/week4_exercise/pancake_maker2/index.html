@@ -13,12 +13,7 @@
       </div>
 
       <div class="form-container">
-        <div class="header-button">
-          <h2>Customize Your Pancake</h2>
-
-          <!-- Check Order Button  
-          <button type="button" id="checkOrder">See Orders</button>
-        </div>  -->
+        <h2>Customize Your Pancake</h2>
 
         <form id="pancakeForm">
           <!-- Customer Name -->
@@ -33,9 +28,9 @@
           <!-- Pancake Type -->
           <label for="type">Choose your pancake type:</label>
           <select id="type" name="pancakeType">
-            <option data-price="5" value="Classic">Classic - 5€</option>
-            <option data-price="6" value="Chocolate">Chocolate - 6€</option>
-            <option data-price="7" value="Blueberry">Blueberry - 7€</option>
+            <option data-price="5" value="5">Classic - 5€</option>
+            <option data-price="6" value="6">Chocolate - 6€</option>
+            <option data-price="7" value="7">Blueberry - 7€</option>
           </select>
 
           <!-- Toppings -->
@@ -45,7 +40,7 @@
               type="checkbox"
               class="topping"
               data-price="1"
-              value="Nuts"
+              value="Nuts 1€"
             />
             Nuts
           </label>
@@ -54,7 +49,7 @@
               type="checkbox"
               class="topping"
               data-price="1"
-              value="Bananas"
+              value="Bananas 1€"
             />
             Bananas
           </label>
@@ -63,7 +58,7 @@
               type="checkbox"
               class="topping"
               data-price="1"
-              value="Syrup"
+              value="Syrup 1€"
             />
             Syrup
           </label>
@@ -75,7 +70,7 @@
               type="checkbox"
               class="extra"
               data-price="2"
-              value="Whipped Cream"
+              value="Whipped Cream - 2€"
             />
             Whipped Cream - 2€</label
           >
@@ -84,7 +79,7 @@
               type="checkbox"
               class="extra"
               data-price="3"
-              value="Ice Cream"
+              value="Ice Cream - 3€"
             />
             Ice Cream - 3€</label
           >
@@ -97,7 +92,6 @@
               name="delivery"
               class="delivery"
               data-price="0"
-              value="Eat In"
               checked
             />
             Eat In</label
@@ -108,7 +102,6 @@
               name="delivery"
               class="delivery"
               data-price="0"
-              value="Pick Up"
             />
             Pick Up</label
           >
@@ -118,7 +111,6 @@
               name="delivery"
               class="delivery"
               data-price="5"
-              value="Delivery"
             />
             Delivery (+5€)</label
           >
@@ -128,21 +120,6 @@
 
           <!-- See Order Button -->
           <button type="button" id="seeOrder">See Order</button>
-
-          <!-- Confirm Order Button -->
-          <button type="button" id="confirmOrder">Confirm Order</button>
-
-          <!-- Check Order Button -->
-          <button
-            type="button"
-            id="checkOrder"
-            onclick="location.href='order.html'"
-          >
-            See Orders
-          </button> 
-
-          <!-- Check Order Button  
-          <button type="button" id="checkOrder">See Orders</button> -->
 
           <!-- Order Summary Display -->
           <div id="orderSummary">

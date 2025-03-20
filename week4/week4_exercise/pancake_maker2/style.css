@@ -34,12 +34,6 @@ body {
   min-height: 100vh;
   overflow-y: auto;
 }
-/* .header-button {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-right: 10vh;
-} */
 
 .price-banner {
   position: absolute;
@@ -68,14 +62,4 @@ select,
 label {
   display: block;
   margin-top: 10px;
-}
-
-button {
-  border-radius: 5px;
-  height: 5vh;
-  background-color: rgb(8, 107, 116);
-  color: white;
-}
-button:hover {
-  background-color: rgb(4, 74, 81);
 }

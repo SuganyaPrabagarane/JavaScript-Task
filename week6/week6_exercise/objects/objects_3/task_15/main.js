@@ -5,5 +5,5 @@ Display the list of foxes dynamically in an HTML element.
 */
 
 const foxTracker = {
-
+    foxes: [],
 }
