@@ -7,19 +7,16 @@ Use `fetch` to get weather data from an API and display it in an HTML element.
 const weatherApp = {
     async fetchWeather(city) {
         try {
-            const response = await fetch(`https://openweathermap.org/api ${city}`);
-            if (!response.ok) {
-                throw new error('Enter valid url or correct city name');
-            }
-            const weatherData = await response.json();
-            console.log('weather data:', weatherData);
-            return weatherData;
+            const response = await fetch(city);
+            const data = await response.json();
+            console.log(data);
+
         } catch (error) {
-            console.log('Error:', error.message);
+            console.log(error.message);
         }
     }
 };
-weatherApp.fetchWeather(helsinki);
+weatherApp.fetchWeather('https://api.openweathermap.org/data/2.5/weather?q=London&appid=your_api_key');
 
-// its not working
+
 

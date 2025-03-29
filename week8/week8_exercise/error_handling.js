@@ -113,9 +113,12 @@ console.log(getUser()); // Should log an error and return null
 */
 
 function saveUser(user) {
-    const userJSON = JSON.stringify(user);
-    //localStorage.setItem('user', userJSON);
-    //localStorage.setItem("user", "{ invalid JSON }");
+    try {
+        const userJSON = JSON.stringify(user);
+        localStorage.setItem('user', userJSON);
+    } catch (error) {
+        console.log('Error in JSON');
+    }
 }
 
 function getUser() {
@@ -128,7 +131,7 @@ function getUser() {
     }
 }
 saveUser({ name: "Alice", age: 25 });
-//console.log(getUser());
+console.log(getUser());
 
 /* Task 7: Check if Object Property Exists
 /*
@@ -162,8 +165,9 @@ fetchData("invalid-url"); // Should log network error
 
 async function fetchData(url) {
     try {
-        fetch(url);
-        console.log('Task 8: data fetched from the url')
+        const response = await fetch(url);
+        const data = await response.json();
+        console.log(data);
 
     } catch (error) {
         console.log(error.message);
@@ -181,9 +185,16 @@ task9("https%3A%2F%2Fexample.com"); // Should decode properly
 task9("%"); // Should log URIError
 */
 
-function task9(malformedURI) {
-    // Your code here
+function checkBrokenURI(malformedURI) {
+    try {
+        return decodeURIComponent(malformedURI);
+    } catch (error) {
+        console.log("URIError");
+    }
 }
+
+console.log(checkBrokenURI("https%3A%2F%2Fexample.com"));
+console.log(checkBrokenURI("%"));
 
 /* Task 10: Clear LocalStorage
 /*

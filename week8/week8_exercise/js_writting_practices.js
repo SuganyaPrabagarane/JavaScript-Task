@@ -8,9 +8,15 @@ Example:
 task1(); // Logs: "Strict mode error: variable is not defined"
 */
 
+"use strict";
 function task1() {
-    // Code here
+    try {
+        a = 2;
+    } catch (error) {
+        console.error('Task1: Strict mode error:', error.message);
+    }
 }
+task1();
 
 /* Task 2: Declare Variables Correctly
 /*
@@ -23,9 +29,15 @@ Expected:
 */
 
 function task2() {
-    // Code here
+    const MAX_USERS = 100;
+    let currentUsers = 10;
+    try {
+        MAX_USERS = 50;
+    } catch (error) {
+        console.error('Task2:Strict mode error:', error.message);
+    }
 }
-
+task2();
 /* Task 3: Create and Log an Object
 /*
 Task: Create an object `userProfile` with:
@@ -39,8 +51,14 @@ Expected:
 */
 
 function task3() {
-    // Code here
+    const userProfile = {
+        name: 'Alice',
+        email: 'alice@example.com',
+        isAdmin: true
+    }
+    console.log(userProfile);
 }
+task3();
 
 /* Task 4: Write a Simple Function
 /*
@@ -52,8 +70,9 @@ calculateArea(5, 10) → 50
 */
 
 function calculateArea(width, height) {
-    // Code here
+    return width * height;
 }
+console.log('Area is: ', calculateArea(5, 10));
 
 /* Task 5: Avoid Magic Numbers
 /*
@@ -66,8 +85,9 @@ applyDiscount(100) → 90
 
 const DISCOUNT = 0.1;
 function applyDiscount(price) {
-    // Code here
+    return price - (DISCOUNT * price);
 }
+console.log('Discount is:', applyDiscount(100));
 
 /* Task 6: Write Useful Comments
 /*
@@ -79,8 +99,9 @@ greetUser("Bob") → "Hello, Bob!"
 */
 
 function greetUser(name) {
-    // Code here
+    return 'Hello,' + name + '!';
 }
+console.log(greetUser('Bob'));
 
 /* Task 7: Refactor Unclear Code
 /*
@@ -94,9 +115,13 @@ After:
 */
 
 function checkNumber(n) {
-    // Code here
+    if (n > 0) {
+        console.log('Positive');
+    } else {
+        console.log('Negative');
+    }
 }
-
+checkNumber(3);
 /* Task 8: Fix Formatting
 /*
 Task: Rewrite this code to make it **formatted correctly**.

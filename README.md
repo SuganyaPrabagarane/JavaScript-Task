@@ -30,3 +30,12 @@
   - [x] JSON
   - [x] local_storage
   - [x] pancake_maker_3
+- **week_08:**
+  - [x] error_handling
+  - [x] fault_findings
+  - [x] js_writting_practices
+- **week_09:**
+  - [x] async
+  - [x] chaining
+  - [x] destructuring
+  - [x] spread-rest
