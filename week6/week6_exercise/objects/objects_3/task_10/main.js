@@ -28,4 +28,3 @@ const addItem = () => {
 }
 addButton.addEventListener('click', addItem)
 
-// Query: Button should be disabled when the input box is empty. - avoid to create empty list

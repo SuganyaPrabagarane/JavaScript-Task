@@ -11,15 +11,14 @@ const cars = [
 ];
 
 const findOldestCar = () => {
-    console.log('Sorting started')
-    cars.sort(function (a,b){
+    cars.sort(function (a, b) {
         let firstCar = a.year;
         let secondCar = b.year;
-        if (firstCar < secondCar) { return -1}
-        if (firstCar > secondCar) { return 1}
+        if (firstCar < secondCar) { return -1 }
+        if (firstCar > secondCar) { return 1 }
         return 0;
     })
-    console.log('After sorting cars by years:',cars);
-    console.log('Car details with the earliest year:',cars[0]);
+    //console.log('After sorting cars by years:',cars);
+    console.log('Car details with the earliest year:', cars[0]);
 }
 findOldestCar();

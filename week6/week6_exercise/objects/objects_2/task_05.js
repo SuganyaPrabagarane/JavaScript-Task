@@ -11,27 +11,30 @@ const students = [
     { name: "Suganya", scores: [90, 95, 90, 92], averageScore: null },
 ]
 
-const updateAverageScore=() =>{
-    let i=0;
-    while(i<students.length){
-        let total =0;
-        for (let j=0; j<students[i].scores.length; j++){
-            total += students[i].scores[j];
-        }
-        //console.log(total)
-        let average = total/students[i].scores.length;
-        console.log('Averagescore of',students[i].name, 'is:',average);
-        i++;
-    }
-}
-//updateAverageScore();
-
-function updateAverageScore1(students){
- students.forEach(student => {
-    const totalScore = student.scores.reduce((sum,score)=> sum + score,0);
-    let average = totalScore / student.scores.length;
-    student.averageScore = average; 
-});
-console.log(students)
+// using reduce method
+function updateAverageScore1(students) {
+    students.forEach(student => {
+        const totalScore = student.scores.reduce((sum, score) => sum + score, 0);
+        let average = totalScore / student.scores.length;
+        student.averageScore = average;
+    });
+    console.log(students);
 }
 updateAverageScore1(students);
+
+//using while and for loop
+const updateAverageScore = () => {
+    let i = 0;
+    while (i < students.length) {
+        let total = 0;
+        for (let j = 0; j < students[i].scores.length; j++) {
+            total += students[i].scores[j];
+        }
+        let average = total / students[i].scores.length;
+        students[i].averageScore = average;
+        i++;
+    }
+    console.log(students);
+}
+updateAverageScore();
+

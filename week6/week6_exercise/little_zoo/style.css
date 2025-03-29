@@ -5,6 +5,10 @@ body {
   text-align: center;
   margin: 0;
   padding: 20px;
+  background-image: url("zoo-image1.jpg");
+  backdrop-filter: blur(5px);
+  background-size: cover;
+  background-position: center;
 }
 
 /* Main Container */

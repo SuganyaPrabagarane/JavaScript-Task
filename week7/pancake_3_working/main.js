@@ -70,7 +70,7 @@ const orderSummary = () => {
                 this.totalPrice = totalPrice;
                 this.status = status;
                 this.showInfo = function () {
-                    return `Id: ${this.id} <br> Name: ${this.customerName} <br> Pancake: ${this.selectedPancake} <br> Topping: ${this.topping} <br> Extras: ${this.extras} <br> DeliveryMethod: ${this.deliveryMethod} <br> TotalPrice: ${this.totalPrice} <br> Status: ${this.status}`;
+                    return `Id: ${this.id} <br> Name: ${this.customerName} <br> Pancake: ${this.selectedPancake} <br> Topping: ${this.topping} <br> Extras: ${this.extras} <br> Delivery Method: ${this.deliveryMethod} <br> TotalPrice: ${this.totalPrice} <br> Status: ${this.status}`;
                 };
             }
         }
@@ -83,6 +83,7 @@ const orderSummary = () => {
         const ordersJSON = JSON.stringify(orders);
         localStorage.setItem("pancakeOrder", ordersJSON);
 
+        confirmOrder.classList.toggle('confirmButton');
         form.reset(); // to clear the input fields
     };
     confirmOrder.addEventListener("click", orderConfirmation);

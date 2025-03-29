@@ -10,7 +10,7 @@ const library = [
     { title: "To Kill a Mockingbird", author: "Harper Lee", yearPublished: 1960 },
     { title: "1984", author: "George Orwell", yearPublished: 1949 },
     { title: "The Great Gatsby", author: "F. Scott Fitzgerald", yearPublished: 1925 }
-  ];
+];
 
 
 /* Task 2
@@ -31,11 +31,11 @@ Use bracket notation to add a boolean property `isAvailable` to the same book, i
 
 // Your code here
 
-library[0].genres = ['Fiction','Drama','Classic'];          // Add new property by using Dot notation
+library[0].genres = ['Fiction', 'Drama', 'Classic'];          // Add new property by using Dot notation
 console.log('Add new property genres to first book:', library[0].genres);
 
 library[0]['isAvailable'] = true;                           // Add new property by using Bracket notation
-console.log('Add boolean property isAvailable to first book:',library[0]['isAvailable']);
+console.log('Add boolean property isAvailable to first book:', library[0]['isAvailable']);
 
 
 /* Task 4
@@ -45,15 +45,15 @@ Using the `Book` constructor, create a new book object with the provided input v
 
 // Your code here
 // Builder function:
-function Book(title,author,yearPublished,genres){
+function Book(title, author, yearPublished, genres) {
     this.title = title;
     this.author = author;
     this.yearPublished = yearPublished;
     this.genres = genres;
 }
 
-const library1 = new Book('Moby Dick','Herman Melville',1851,["Adventure", "Classic", "Fiction"]);
-library.push({...library1});
+const library1 = new Book('Moby Dick', 'Herman Melville', 1851, ["Adventure", "Classic", "Fiction"]);
+library.push({ ...library1 });
 
 
 /* Task 5
@@ -64,10 +64,10 @@ Test `createBook` by creating a new book object with user-provided input and log
 
 // Your code here
 
-function createBook(title,author,yearPublished,genres){
-    return {title,author,yearPublished,genres};
+function createBook(title, author, yearPublished, genres) {
+    return { title, author, yearPublished, genres };
 }
-const book1 = createBook('Pride and Prejudice','Jane Austen',1813,["Romance", "Classic", "Fiction"]);
+const book1 = createBook('Pride and Prejudice', 'Jane Austen', 1813, ["Romance", "Classic", "Fiction"]);
 console.log(book1);
 
 /* Task 6
@@ -78,6 +78,6 @@ Parse the JSON string back into a JavaScript object and log the first book's tit
 // Your code here
 
 const jsonLibraray = JSON.stringify(library);
-//console.log('Converting to JSON Library:', jsonLibraray);
+console.log('Converting to JSON Library:', jsonLibraray);
 const backtoLibrary = JSON.parse(jsonLibraray);
-console.log('Converting from JSON Library:',backtoLibrary[0].title);
+console.log('Converting from JSON Library:', backtoLibrary[0].title);

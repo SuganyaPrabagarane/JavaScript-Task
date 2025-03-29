@@ -77,13 +77,13 @@ const displayOrdersOnPage = (ordersObject) => {
         const image = document.createElement('img');
 
         status.textContent = `Status: ${order.status}`;
-        id.textContent = `Id:${order.id}`;
-        customerName.textContent = `Customer Name:${order.customerName}`;
-        pancakeType.textContent = `Pancake Type:${order.selectedPancake}`;
-        toppings.textContent = `Toppings:${order.topping}`;
-        extras.textContent = `Extras:${order.extras}`;
-        deliveryMethod.textContent = `Delivery Method:${order.deliveryMethod}`;
-        totalPrice.textContent = `Total Price:${order.totalPrice}`;
+        id.textContent = `Id: ${order.id}`;
+        customerName.textContent = `Customer Name: ${order.customerName}`;
+        pancakeType.textContent = `Pancake Type: ${order.selectedPancake}`;
+        toppings.textContent = `Toppings: ${order.topping}`;
+        extras.textContent = `Extras: ${order.extras}`;
+        deliveryMethod.textContent = `Delivery Method: ${order.deliveryMethod}`;
+        totalPrice.textContent = `Total Price: ${order.totalPrice}`;
         image.textContent = `${order.selectedPancake}`;
 
         orderList.appendChild(status)

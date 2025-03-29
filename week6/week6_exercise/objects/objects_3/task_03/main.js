@@ -5,20 +5,20 @@ Add a button in HTML. When clicked, toggle the theme between light and dark, upd
 
 const theme = {
     name: 'light',
-    isActive: false,
+    isActive: true,
 }
 
 const toggleButton = document.querySelector('#toggle');
 
-const toggle =() =>{
-    if (theme.name === 'light'){
-        document.body.style.backgroundColor = 'red';
-        theme.isActive = true;
+const toggle = () => {
+    if (theme.name === 'light') {
+        document.body.style.backgroundColor = 'darkblue';
+        // theme.name = 'dark';
 
-    } else 
-     {
+    }
+    if (theme.name === 'dark') {
         document.body.style.backgroundColor = 'black';
-        theme.isActive = true;
+        // theme.name = 'light';
     }
     console.log(theme)
 }

@@ -11,7 +11,7 @@ const musicAlbums = [
 ]
 
 musicAlbums.filter(musicAlbum => {
-    if(musicAlbum.releaseYear > 2000){
+    if (musicAlbum.releaseYear > 2000) {
         console.log(musicAlbum);
     }
 });

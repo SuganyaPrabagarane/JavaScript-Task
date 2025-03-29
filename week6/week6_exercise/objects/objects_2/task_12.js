@@ -10,16 +10,13 @@ const employees = [
     { name: "Pragadhish", role: "Data Analyst", workingHours: 46 }
 ]
 
-const findWorkingHours = employees.map(employee => {
-    if(employee.workingHours > 40){
-        //console.log(employee);
-        return employee;
-    }
-})
-//console.log(findWorkingHours);  // The object which is <40 workinghours displayed as undefined. How to avoid this 
+// using filter
+const findWorkingHours = employees.filter(employee => employee.workingHours > 40);
+console.log(findWorkingHours);
 
+// using map
 employees.map(employee => {
-    if(employee.workingHours > 40){
+    if (employee.workingHours > 40) {
         console.log(employee);
     }
 })

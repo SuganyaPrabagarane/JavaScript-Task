@@ -18,11 +18,10 @@ const addTask = () => {
     const tasks = [];
     const addTask = new Task('JavaScript', 'Object Exercises', 'Yes');  // Creating new object by using constructor
     tasks.push(addTask);                                              // push that object into array
-    console.log(tasks);
     tasks.forEach(task => {
-        const para = document.createElement('p');                    // create new paragraph element to display array items
+        const para = document.createElement('p');                   // create new paragraph element to display array items
         para.textContent = `Title: ${task.title}, Description: ${task.description}, Completed:${task.completed}`;
-        displayOnPage.appendChild(para);                    // Add this 'p' element as child for 'div' to display array of items
+        displayOnPage.appendChild(para);              // Add this 'p' element as child for 'div' to display array of items
     });
 
 }

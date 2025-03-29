@@ -14,6 +14,7 @@ const productName = document.querySelector('#product');
 const price = document.querySelector('#price');
 const inputQuantity = document.querySelector('#qty');
 const totalPriceDisplay = document.querySelector('#totalPrice')
+const addButton = document.querySelector('#addBtn');
 
 let totalPrice = 0;
 productName.textContent = product.name;
@@ -25,9 +26,10 @@ const updateTotalPrice = (event) => {
     totalPriceDisplay.textContent = `Total Price: ${totalPrice}€`;
     product.quantity = quantity;             // update the quantity property
     product.totalPrice = totalPrice;         // add new property 'totalPrice' and update the value
+    inputQuantity.value = '';
     console.log(product);
 }
 
-inputQuantity.addEventListener('change',updateTotalPrice)
+addButton.addEventListener('click', updateTotalPrice)
 
 

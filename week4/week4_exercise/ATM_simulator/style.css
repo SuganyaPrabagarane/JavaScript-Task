@@ -3,11 +3,14 @@
   margin: 0px;
   padding: 0px;
 }
+body {
+  background-color: whitesmoke;
+}
 
 button {
   background-color: 39874E;
   padding: 4%;
-  width: 280px;
+  width: 300px;
   border-radius: 5px;
   border-color: green;
   color: white;
@@ -19,26 +22,64 @@ button:hover {
 
 input {
   padding: 4%;
-  width: 280px;
+  width: 300px;
   border-radius: 5px;
+  box-shadow: inset;
 }
 
 .div_atm {
-  background-color: 58588A;
-  height: 600px;
-  width: 380px;
+  background-color: #cbcbcc;
+  height: 550px;
+  width: 500px;
   border-radius: 10px;
-  padding: 50px;
-  margin: auto;
+  padding: 40px;
+  margin-top: 15vh;
+  margin-left: 50vh;
   font-family: sans-serif;
+  box-shadow: inset 2px 2px 2px 2px rgb(130, 126, 122);
 }
 
-.center {
+.div_atm .p-greet {
+  margin-top: 4vh;
+  font-size: 2rem;
   text-align: center;
-  font-size: x-large;
+  margin-left: 3vh;
 }
-
 .balance {
   text-align: center;
   font-size: xx-large;
+  position: relative;
+}
+.pin input,
+p {
+  margin-left: 7vh;
+  margin-top: 5vh;
+  align-items: start;
+}
+
+.pin button {
+  margin-left: 7vh;
+}
+
+.overlay {
+  position: fixed;
+  background-color: #cbcbcc;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  top: 24vh;
+  left: 57vh;
+  width: 400px;
+  height: 390px;
+  padding: 50px;
+}
+
+.hidden {
+  display: none;
+}
+
+.div-message {
+  width: auto;
+  text-align: center;
+  font-size: 1.2rem;
 }

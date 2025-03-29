@@ -5,25 +5,25 @@ Display `value` in an HTML element and update it dynamically when buttons are cl
 */
 
 const counter = {
-    value:5,
+    value: 5,
 }
 
 const increaseButton = document.querySelector('#increase');
 const decreaseButton = document.querySelector('#decrease');
 const displayValue = document.querySelector('#value');
 
-let count = 0;
+let count = counter.value;
 
 displayValue.textContent = `Value: ${counter.value}`;
 
-const increaseValue =() =>{
-    count +=1;
+const increaseValue = () => {
+    count += 1;
     displayValue.textContent = `Value: ${count}`;
 }
-increaseButton.addEventListener('click',increaseValue)
+increaseButton.addEventListener('click', increaseValue)
 
-const decreaseValue =() =>{
-    count -=1;
+const decreaseValue = () => {
+    count -= 1;
     displayValue.textContent = `Value: ${count}`;
 }
-decreaseButton.addEventListener('click',decreaseValue)
+decreaseButton.addEventListener('click', decreaseValue)

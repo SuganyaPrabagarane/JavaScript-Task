@@ -25,8 +25,8 @@
   - [x] little_Zoo
   - [x] objects_1
   - [x] objects_2
-  - [ ] objects_3
+  - [x] objects_3 (Except task_7)
 - **week_07:**
   - [x] JSON
   - [x] local_storage
-  - [ ] pancake_maker_3
+  - [x] pancake_maker_3

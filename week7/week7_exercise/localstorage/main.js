@@ -4,9 +4,9 @@ Retrieve it and log it to the console.
 */
 // Your code here
 
-localStorage.setItem('message','Hello, LocalStorage!');
+localStorage.setItem('message', 'Hello, LocalStorage!');
 const getMessage = localStorage.getItem('message');
-console.log("Task1: getMessage: ",getMessage);
+console.log("Task1: getMessage: ", getMessage);
 
 /* Task 2
 Create an object `userSettings` with:
@@ -28,7 +28,7 @@ const userSettingsJSON = JSON.stringify(userSettings);
 localStorage.setItem('userSettingLocalStorage', userSettingsJSON);
 const returnedSettings = localStorage.getItem('userSettingLocalStorage');
 const userSettingsObject = JSON.parse(returnedSettings);
-console.log('Task2: Access theme from userSettingsObject:',userSettingsObject.theme);
+console.log('Task2: Access theme from userSettingsObject:', userSettingsObject.theme);
 
 
 /* Task 3
@@ -40,13 +40,13 @@ Retrieve and parse it, then log the titles of all books.
 // Your code here
 
 const favoriteBooks = [
-    {title: 'To Kill a Mockingbird', author: 'Harper Lee'},
-    {title: '1984', author: 'George Orwell'},
-    {title: 'The Great Gatsby', author: 'F. Scott Fitzgerald'},
+    { title: 'To Kill a Mockingbird', author: 'Harper Lee' },
+    { title: '1984', author: 'George Orwell' },
+    { title: 'The Great Gatsby', author: 'F. Scott Fitzgerald' },
 ]
 
 const favoriteBooksJSON = JSON.stringify(favoriteBooks);
-localStorage.setItem('favoriteBooksLoclStorage',favoriteBooksJSON);
+localStorage.setItem('favoriteBooksLoclStorage', favoriteBooksJSON);
 const returnedFavoriteBooks = localStorage.getItem('favoriteBooksLoclStorage');
 const favoriteBooksObject = JSON.parse(returnedFavoriteBooks);
 console.log('Task:3 Titles of all books:');
@@ -66,9 +66,9 @@ const fox = {
     habitat: 'Woodlands'
 }
 
-function saveToLocalStorage(key,object){
+function saveToLocalStorage(key, object) {
     const foxJSON = JSON.stringify(fox);
-    localStorage.setItem('foxLocal',foxJSON);
+    localStorage.setItem('foxLocal', foxJSON);
     const returnedFox = localStorage.getItem('foxLocal')
     console.log('Task4: Get saved data from local storage:', returnedFox);
 }
@@ -83,7 +83,7 @@ Write a function `getFromLocalStorage(key)` that:
 
 // Your code here
 
-function getFromLocalStorage(key){
+function getFromLocalStorage(key) {
     const returnedFox1 = localStorage.getItem('foxLocal')
     const foxObject = JSON.parse(returnedFox1);
     console.log('Task5: Retrived valuse from local storage:', foxObject)
@@ -106,18 +106,18 @@ const userProfile = {
     username: 'Suganya',
     email: 'suganya@gmail.com',
     preferences: {
-        theme:'light',
+        theme: 'light',
         notification: true
     }
 }
 
 const userProfileJSON = JSON.stringify(userProfile);
-localStorage.setItem('userProfileLocalStorage',userProfileJSON);
+localStorage.setItem('userProfileLocalStorage', userProfileJSON);
 const returnedUserProfile = localStorage.getItem('userProfileLocalStorage');
 const userProfileObject = JSON.parse(returnedUserProfile);
 userProfileObject.preferences.theme = 'Dark';
-console.log('Task:6, userProfileObject with pdated theme property:', userProfileObject);
-console.log('Task:6, Display only the preference:',userProfileObject.preferences)
+console.log('Task:6, userProfileObject with updated theme property:', userProfileObject);
+console.log('Task:6, Display only the preference:', userProfileObject.preferences)
 
 /* Task 7
 Define an object `shoppingList` with an array `items` (strings).
@@ -132,19 +132,19 @@ Write a function `addItemToList(item)` that:
 // Your code here
 
 const shoppingList = {
-    items: ['Milk', 'Curd','Banana', 'Orange','Coffe Powder']
+    items: ['Milk', 'Curd', 'Banana', 'Orange', 'Coffe Powder']
 }
 
 let shoppingListJSON = JSON.stringify(shoppingList);
 localStorage.setItem('shoppingListLocalStorage', shoppingListJSON);
 
-function addItemToList(item){
+function addItemToList(item) {
     const returnedShoppingList = localStorage.getItem('shoppingListLocalStorage');
     const shoppingListObject = JSON.parse(returnedShoppingList);
     //console.log("Before: ", shoppingListObject);  // In browser shoppingListObject displays the items with newly added value before running the push() command
-    shoppingListObject.items.push('Apple'); 
+    shoppingListObject.items.push('Apple');
     shoppingListJSON = JSON.stringify(shoppingListObject);
-    localStorage.setItem('shoppingListLocalStorage',shoppingListJSON);
+    localStorage.setItem('shoppingListLocalStorage', shoppingListJSON);
     console.log('Task:7 Updated list:', localStorage.getItem('shoppingListLocalStorage'));
 }
 addItemToList();
@@ -162,18 +162,18 @@ Write a function `incrementCounter()` that:
 
 // Your code here
 
-const counter = { count:0};
+const counter = { count: 0 };
 
 let counterJSON = JSON.stringify(counter);
-localStorage.setItem('counterLocalStorage',counterJSON);
+localStorage.setItem('counterLocalStorage', counterJSON);
 
-function incrementCounter(){
+function incrementCounter() {
     const returnedCounter = localStorage.getItem('counterLocalStorage');
-    const counterObject =JSON.parse(returnedCounter);
+    const counterObject = JSON.parse(returnedCounter);
     counterObject.count = counterObject.count + 1;
     counterJSON = JSON.stringify(counterObject);
-    localStorage.setItem('counterLocalStorage',counterJSON)
-    console.log('Task:8, After updating count value:',localStorage.getItem('counterLocalStorage'));
+    localStorage.setItem('counterLocalStorage', counterJSON)
+    console.log('Task:8, After updating count value:', localStorage.getItem('counterLocalStorage'));
 }
 incrementCounter();
 
@@ -190,25 +190,25 @@ Write a function `markTaskComplete(taskId)` that:
 // Your code here
 
 const tasks = [
-    {id: 250001, description: 'HTML', completed: true},
-    {id: 250002, description: 'CSS', completed: false},
-    {id: 250003, description: 'JavaScript', completed: true},
-    {id: 250004, description: 'UI Design', completed: false},
+    { id: 250001, description: 'HTML', completed: true },
+    { id: 250002, description: 'CSS', completed: false },
+    { id: 250003, description: 'JavaScript', completed: true },
+    { id: 250004, description: 'UI Design', completed: false },
 ]
 
 let tasksJSON = JSON.stringify(tasks);
-localStorage.setItem('tasksLocalStorage',tasksJSON);
+localStorage.setItem('tasksLocalStorage', tasksJSON);
 
-function markTaskComplete(taskId){
+function markTaskComplete(taskId) {
     let returnedTasks = localStorage.getItem('tasksLocalStorage');
     const tasksObject = JSON.parse(returnedTasks);
     tasksObject.forEach(task => {
-        if (task.id === taskId){
+        if (task.id === taskId) {
             task.completed = true;
         }
     });
     tasksJSON = JSON.stringify(tasksObject);
-    localStorage.setItem('tasksLocalStorage',tasksJSON);
+    localStorage.setItem('tasksLocalStorage', tasksJSON);
     console.log('Task:9 After updating the completed property:', localStorage.getItem('tasksLocalStorage'))
 }
 
@@ -221,9 +221,9 @@ Call it and confirm LocalStorage is empty.
 
 // Your code here
 
-function clearLocalStorage(){
+function clearLocalStorage() {
     localStorage.clear();
-    console.log('Local Storage:1',localStorage.getItem('tasksLocalStorage'))
-    console.log('Local Storage:2',localStorage.getItem('counterLocalStorage'))
+    console.log('Local Storage:1', localStorage.getItem('tasksLocalStorage'))
+    console.log('Local Storage:2', localStorage.getItem('counterLocalStorage'))
 }
 clearLocalStorage();

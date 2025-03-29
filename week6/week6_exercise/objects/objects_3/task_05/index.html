@@ -3,27 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Objects 2_Task 4</title>
   </head>
   <body>
-    <hi>Object 3 Exercise: Task 4</hi><br /><br />
+    <div class="main">
+      <h1>Object 3 Exercise: Task 4</h1>
+      <br /><br />
 
-    <div>
-      <label for="product">Product:</label>
-      <smal id="product"></smal>
+      <div>
+        <label for="product">Product:</label>
+        <smal id="product"></smal>
+        <br />
+      </div>
       <br />
-    </div>
-    <br />
-    <div>
-      <label for="price">Price:</label>
-      <smal id="price"></smal><br />
-    </div>
-    <br />
+      <div>
+        <label for="price">Price:</label>
+        <smal id="price"></smal><br />
+      </div>
+      <br />
+      <label for="quantity">Quantity</label>
+      <input type="number" id="qty" placeholder="Enter the quantity" />
+      <button id="addBtn">Add</button>
+      <br />
+      <br />
 
-    <label for="quantity">Quantity</label>
-    <input type="number" id="qty" placeholder="Enter the quantity" /><br />
-    <br />
-    <div id="totalPrice"></div>
+      <div id="totalPrice"></div>
+    </div>
 
     <script src="main.js"></script>
   </body>
