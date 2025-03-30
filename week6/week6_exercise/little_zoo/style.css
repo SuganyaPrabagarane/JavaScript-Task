@@ -13,18 +13,18 @@ body {
 
 /* Main Container */
 .container {
-  width: 80%;
+  width: 100%;
   max-width: 600px;
   margin: auto;
-  background: white;
+  background: rgb(255, 255, 255);
   padding: 20px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 4px 6px rgba(181, 12, 12, 0.1);
   border-radius: 8px;
 }
 
 /* Heading */
 h1 {
-  color: #333;
+  color: #034112;
 }
 
 /* Controls (Search, Filter, Sort) */
@@ -40,6 +40,7 @@ button {
   border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 16px;
+  box-shadow: 1px 1px 1px 1px rgb(171, 154, 154);
 }
 
 button {
@@ -55,10 +56,14 @@ button:hover {
 /* Animal List */
 #animalList {
   list-style-type: none;
-  padding: 0;
+  padding-right: 8vh;
+  padding-left: 8vh;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-#animalList li {
+/* #animalList li {
   background: #fff;
   margin: 8px 0;
   padding: 10px;
@@ -67,14 +72,32 @@ button:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
+} */
+
+#animalList li {
+  width: 20vh;
+  height: 20vh;
+  border-radius: 5px;
+  background-color: #93bf79;
+  box-shadow: 0px 2px 4px;
+  padding: 5px;
+  padding-top: 2vh;
+  color: #08022b;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 3vh;
 }
 
 .remove-btn {
-  background-color: #dc3545;
+  background-color: #e04555;
   color: white;
   border: none;
-  padding: 5px 8px;
+  margin-bottom: 0vh;
   cursor: pointer;
+  width: 12vh;
+  height: 6vh;
+  border-radius: 5px;
 }
 
 .remove-btn:hover {

@@ -5,22 +5,22 @@ Display all numbers in a single line in the console.;
 */
 
 
- const logEvenNumbers = () => {       // Have some queries need to get clarify
+const logEvenNumbers = () => {       // Have some queries need to get clarify
     let evenNumber = 2;
-    for (i=2; i<=50; i+=2){
-        evenNumber += ','+i;
+    for (i = 4; i <= 50; i += 2) {
+        evenNumber += ',' + i;
         let a = 100 - i;
-        if (a<100){
-            evenNumber+= ','+a;
-        }  
+        if (a < 100 && a != 50) {
+            evenNumber += ',' + a;
+        }
     }
     console.log(evenNumber);
 
- }
+}
 logEvenNumbers();
 
 
- // Using while loop
+// Using while loop
 // const logEvenNumbers2 = () => {
 //     let i = 2;
 //     while (i<=50){
